@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <title>Welcome to the American Go Association</title>
+        <link rel="stylesheet" type="text/css" href="main_style.css">
+        <!--[if lte IE 7]>
+        <link rel="stylesheet" type="text/css" href="ie_fixes.css">
+        <![endif]--> 
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.mainnav a + ul')
+                    .addClass("hidable")
+                    .prev().addClass("shower")
+                           .toggle(function() { $(this).next().slideDown("fast");
+                                              },
+                                   function() { $(this).next().slideUp("fast");
+                                              })
+                           .click(function() { $(this).toggleClass("shower");
+                                               $(this).toggleClass("hider");
+                                             });
+                $('.hidable').hide();
+            });
+        </script>
+        </head>
+        <body>
+            <div id="header">
+                <a href="#" id="logo">
+                    <img src="images/agalogo2.png" alt="AGA Logo">
+                </a>
+                <div id="navwrap">
+                    <ul class="navbar">
+                        <li><a href="#">Join the AGA</a></li>
+                        <li><a href="#">Tournaments</a></li>
+                        <li><a href="#">Ratings</a></li>
+                        <li><a href="#">eJournal</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="fauxcolbg">
+                <div id="wrapper">
+                    <div id="content" class="column">
+                        <h1>Welcome</h1>
+                        <h2>The standard Lorem Ipsum passage</h2>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit, sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut <a href="#">enim</a> ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip
+                        ex ea commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu
+                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit
+                        anim id est laborum.
+                        </p>
+                        <a href="#">Looping Link</a>
+
+                        <h2>De Finibus Bonorum et Malorum</h2>
+
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit
+                        voluptatem accusantium doloremque laudantium, totam rem
+                        aperiam, eaque ipsa quae ab illo inventore veritatis et
+                        quasi architecto beatae vitae dicta sunt explicabo. Nemo
+                        enim ipsam voluptatem quia voluptas sit aspernatur aut
+                        odit aut fugit, sed quia consequuntur magni dolores eos
+                        quaerat voluptatem. Ut enim ad minima veniam, quis
+                        nostrum exercitationem ullam corporis suscipit laboriosam,
+                        nisi ut aliquid ex ea commodi consequatur? Quis autem vel
+                        eum iure reprehenderit qui in ea voluptate velit esse quam
+                        nihil molestiae consequatur, vel illum qui dolorem eum
+                        fugiat quo voluptas nulla pariatur?
+                        </p>
+                    </div>
+
+                    <div id="leftcol" class="column">
+                        <ul class="mainnav">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">What is Go?</a></li>
+                            <li><a href="#">AGA Membership</a></li>
+                            <li><a href="#">Ratings</a></li>
+                            <li><a href="#">Play Go</a></li>
+                            <li><a href="#">Resources</a>
+                            <ul>
+                                <li><a href="#">Abcde</a>
+                                <ul>
+                                    <li><a href="#">Abcde</a></li>
+                                    <li><a href="#">What is Go?</a></li>
+                                    <li><a href="#">Qwertyuii</a></li>
+                                    <li><a href="#">Yasdhhdf</a></li>
+                                    <li><a href="#">B</a></li>
+                                    <li><a href="#">Urgdfgaxxx</a></li>
+                                </ul>
+                                </li>
+                                <li><a href="#">What is Go?</a></li>
+                                <li><a href="#">Qwertyuii</a></li>
+                                <li><a href="#">Yasdhhdf</a></li>
+                                <li><a href="#">B</a></li>
+                                <li><a href="#">Urgdfgaxxx</a></li>
+                            </ul>
+                            </li>
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">About the AGA</a></li>
+                        </ul>
+                        <form id="sitesearch" action="#">
+                            <fieldset>
+                                <legend>Site Search</legend>
+                                <input type="text" id="searchbox" name="q" maxlength="255" value="">
+                                <input type="submit" id="searchbutton" value="Search">
+                            </fieldset>
+                        </form>
+                    </div>
+
+                    <div id="rightcol" class="column">
+                        <h1>News</h1>
+                        <ul id="news">
+                            <li><a href="#"><span>Exciting</span>Something
+                                really exciting happened.</a></li>
+                            <li><a href="#"><span>Price Wins Tengen</span>Lorem ipsum
+                                dolor sit amet, consectetur adipisicing elit.</a></li>
+                            <li><a href="#"><span>AGA Budget</span>Lorem ipsum dolar
+                                sit amet.</a></li>
+                            <li><a href="#"><span>Go on the Rise</span>Sed ut perspiciatis unde omnis iste natus error sit.</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Keep the floats contained -->
+                    <br style="clear: both;">
+                </div>
+            </div>
+            <div id="footer">
+                <p>&copy;2010 Joshua Simmons &lt;mud at emptypath dot com&gt;</p>
+            </div>
+        </body>
+    </html>

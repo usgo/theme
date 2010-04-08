@@ -1,0 +1,15 @@
+/* Trigger non-standard IE hasLayout for certain objects.
+ * Sometimes makes IE behave better, especially IE 6 */
+.mainnav li,
+#rightcol,
+#navwrap,
+#news li,
+#wrapper,
+#fauxcolbg {
+    zoom: 1;
+}
+
+
+* html #leftcol {
+    left: 160px;  /*  Cwp  */
+}

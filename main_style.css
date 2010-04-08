@@ -1,0 +1,309 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    color: #000;
+    background: #cc9933;
+    
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 12px;
+
+    min-width: 580px; /*  2 * (Awp + Bp) + Cwp   */
+}
+
+/* columns */
+
+/* in comments:
+ * A B C = columns
+ * w = width
+ * p = padding
+ * wp = width + padding
+ *
+ * DON'T FORGET TO UPDATE ie_fixes.css when you change Cwp!
+ */
+
+.column {
+    float: left;
+    position: relative;
+}
+
+#fauxcolbg {
+    margin: 0;
+    padding: 0;
+
+    background: #ffffcc url(images/rcol_bg.png) repeat-y top right;
+}
+#wrapper {
+    padding-left: 170px;  /*  Awp  */
+    padding-right: 200px; /*  Cwp + Bp  */
+    background: url(images/lcol_bg.png) repeat-y top left;
+}
+
+#leftcol {
+    width: 150px;        /*  Aw  */
+    padding: 10px;       /*  Ap  */
+    right: 210px;        /*  Awp + Bp  */
+    margin-left: -100%;  /*  -Bw  */
+}
+
+#content {
+    padding: 20px; /*  Bp  */
+    width: 100%;   /*  Bw  */
+
+    font-family: georgia, serif;
+}
+
+#rightcol {
+    width: 160px;         /*  Cw  */
+    padding: 0;           /*  Cp  */
+    margin-right: -200px; /*  -(Cwp + Bp)  */
+}
+
+/* end columns */
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: .5em;
+    margin-bottom:.5em;
+}
+
+h1 { font-size: 1.7em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.3em; }
+h4 { font-size: 1.15em; }
+h5 { font-size: 1.0em; }
+h6 { font-size: 0.8em; }
+
+a:link,
+a:visited {
+    color: #654c19;
+}
+
+#header {
+    height: 130px;
+    background: transparent url("images/goban_bg.png") no-repeat;
+    background-position: top right;
+
+    margin: 0;
+    padding: 0;
+    margin-top: -1px;
+    border-top: 1px solid white;
+}
+
+#logo {
+    margin: 0;
+    padding: 0;
+    float: left;
+    border: 0;
+}
+
+#logo img {
+    border: 0;
+    padding: 0;
+    margin: 5px;
+    margin-bottom: 0;
+}
+
+#navwrap {
+    height: 16px;
+    margin: 0;
+    margin-top: 100px;
+    padding: 6px 0;
+    background: black;
+    border: 1px solid black;
+    display: block;
+}
+
+.navbar {
+    margin: 0;
+    padding: 0;
+    float: right;
+    list-style-type: none;
+    font-size: 14px;
+}
+
+.navbar li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    padding-right: 7px;
+    padding-left: 7px;
+    border-left: 1px solid white;
+}
+
+.navbar li:first-child {
+    border-left: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-family:verdana, arial, helvetica, sans-serif;    
+}
+
+.navbar a:link,
+.navbar a:visited {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.mainnav {
+    margin: 0;
+    padding: 0;
+    font-size: 1.4em;
+}
+
+.mainnav li {
+    font-variant: small-caps;
+    list-style-type: none;
+}
+
+.mainnav ul {
+    margin: 0;
+    padding-left: 1.5em;
+}
+
+.mainnav li li {
+    font-size: .9em;
+}
+
+.mainnav a.hider:hover,
+.mainnav a.shower:hover {
+    text-decoration: none;
+}
+
+.mainnav .hider {
+    background: url(images/subtract.png) no-repeat center left;
+    padding-left: 16px;
+    margin-left: .25em;
+}
+
+.mainnav .shower {
+    background: url(images/add.png) no-repeat center left;
+    padding-left: 16px;
+    margin-left: .25em;
+}
+
+/* preload these images, in newer browsers */
+body:after {
+    content: url(images/add.png) url(images/subtract.png);
+    display: none;
+}
+
+.mainnav a {
+    display: block;
+    text-decoration: none;
+    padding: 5px 0px 5px 10px;
+    color: #000;
+}
+
+.mainnav a:hover {
+    text-decoration: underline;
+}
+
+#sitesearch legend {
+    display: none;
+}
+
+#sitesearch {
+    width: 150px;
+    margin: 0 auto;
+    margin-top: 40px;
+    display: block;
+}
+
+#sitesearch fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#searchbox {
+    width: 130px;
+    margin: 0 auto;
+    background: white;
+    color: black;
+    display: block;
+    border: 1px solid black;
+}
+
+#searchbutton {
+    display: block;
+    margin: 2px auto;
+    width: 5em;
+}
+
+#content h1, h2, h3, h4, h5, h6 {
+    font-family: verdana, arial, helvetica, sans-serif;
+}
+
+#rightcol h1 {
+    border-bottom: 1px solid green;
+    margin: 0px;
+    margin-top: 10px;
+    padding: 10px;
+    padding-top: 0;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#news {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+#news li {
+    border-bottom: 1px solid green;
+    margin: 0;
+    padding: 0;
+}
+
+#news a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    margin: 0;
+    padding: 10px 5px;
+}
+
+#news a:link,
+#news a:visited {
+    color: #000;
+    text-decoration: none;
+}
+
+#news a:hover {
+    background: #c93;
+}
+
+#news a:hover span {
+    text-decoration: underline;
+}
+
+#news span {
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#footer {
+    clear: both;
+    display: block;
+    text-align: center;
+    padding: 5px;
+    color: white;
+    border: 1px solid black;
+
+    background: black;
+}
+
+#footer p {
+    margin: 0;
+    padding: 0;
+}
