@@ -32,10 +32,10 @@ body {
 
 #container {  /* also does the left faux column */
     min-width: 580px;
-    background: #ffffcc url(images/lcol_bg.png) repeat-y top left;
+    background: #ffffcc url(../images/lcol_bg.png) repeat-y top left;
 }
 #fauxcolbgR {
-    background: url(images/rcol_bg.png) repeat-y top right;
+    background: url(../images/rcol_bg.png) repeat-y top right;
 }
 
 #navcol {
@@ -96,7 +96,7 @@ a:hover {
 
 #header {
     height: 130px;
-    background: transparent url("images/goban_bg.png") no-repeat;
+    background: transparent url("../images/goban_bg.png") no-repeat;
     background-position: top right;
 
     margin-top: -1px;
@@ -179,20 +179,20 @@ a:hover {
 }
 
 .mainnav .hider {
-    background: url(images/subtract.png) no-repeat center left;
+    background: url(../images/subtract.png) no-repeat center left;
     padding-left: 16px;
     margin-left: .25em;
 }
 
 .mainnav .shower {
-    background: url(images/add.png) no-repeat center left;
+    background: url(../images/add.png) no-repeat center left;
     padding-left: 16px;
     margin-left: .25em;
 }
 
 /* preload these images, in newer browsers */
 body:after {
-    content: url(images/add.png) url(images/subtract.png);
+    content: url(../images/add.png) url(../images/subtract.png);
     display: none;
 }
 
