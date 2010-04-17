@@ -55,7 +55,7 @@
             </div>
         </div>
         <div id="footer">
-            <p>&copy;2010 Skeleware Technologies &lt;webmaster at skeleware dot com&gt;</p>
+            <!--#include file="includes/footer.html" -->
         </div>
     </body>
 </html>
