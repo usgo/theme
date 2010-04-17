@@ -28,41 +28,6 @@ body {
     min-width: 580px;
 }
 
-/* columns */
-
-#container {  /* also does the left faux column */
-    min-width: 580px;
-    background: #ffffcc url(../images/lcol_bg.png) repeat-y top left;
-}
-#fauxcolbgR {
-    background: url(../images/rcol_bg.png) repeat-y top right;
-}
-
-#navcol {
-    float: left;
-    width: 150px;
-    padding: 10px;
-    margin-left: -100%;
-}
-
-#contentwrapper {
-    float: left;
-    width: 100%;
-}
-
-#content {
-    margin: 0 160px 10px 170px;
-    padding: 0 20px 30px 20px;
-}
-
-#extracol {
-    float: left;
-    width: 160px;
-    margin-left: -160px;
-}
-
-/* end columns */
-
 #content {
     font-family: georgia, serif;
     font-size: 14px;
