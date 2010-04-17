@@ -7,15 +7,16 @@ body {
     
     font-family: verdana, arial, helvetica, sans-serif;
     font-size: 12px;
-
+    min-width: 580px;
 }
 
 /* columns */
 
-#fauxcolbgR {
+#container {  /* also fauxcolbgR */
     margin: 0;
     padding: 0;
 
+    min-width: 580px;
     background: #ffffcc url(images/rcol_bg.png) repeat-y top right;
 }
 #fauxcolbgL {
