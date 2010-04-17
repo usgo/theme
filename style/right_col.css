@@ -10,4 +10,5 @@
     float: left;
     width: 160px;
     margin-left: -160px;
+    display: block !important;
 }
