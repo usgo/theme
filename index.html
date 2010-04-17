@@ -4,29 +4,12 @@
     <head>
         <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
         <title>Welcome to the American Go Association</title>
-        <link rel="stylesheet" type="text/css" href="style/main.css">
-        <!--[if lte IE 7]>
-        <link rel="stylesheet" type="text/css" href="style/ie_fixes.css">
-        <![endif]--> 
-
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
-        <script type="text/javascript" src="scripts/expanding_menu.js"></script>
+        <!--#include file="includes/head.html" -->
     </head>
     <body>
         <div id="header">
-            <a href="#" id="logo">
-                <img src="images/agalogo2.png" alt="AGA Logo">
-            </a>
-            <div id="navwrap">
-                <ul class="navbar">
-                    <li><a href="#">Join the AGA</a></li>
-                    <li><a href="#">Tournaments</a></li>
-                    <li><a href="#">Ratings</a></li>
-                    <li><a href="#">eJournal</a></li>
-                </ul>
-            </div>
+            <!--#include file="includes/header.html" -->
         </div>
-
         <div id="container">
             <div id="fauxcolbgR" class="containfloats">
                 <div id="wrapper">
@@ -63,56 +46,11 @@
                         </p>
                     </div>
                 </div>
-
                 <div id="navcol">
-                    <ul class="mainnav">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">What is Go?</a></li>
-                        <li><a href="#">AGA Membership</a></li>
-                        <li><a href="#">Ratings</a></li>
-                        <li><a href="#">Play Go</a></li>
-                        <li><a href="#">Resources</a>
-                        <ul>
-                            <li><a href="#">Abcde</a>
-                            <ul>
-                                <li><a href="#">Abcde</a></li>
-                                <li><a href="#">What is Go?</a></li>
-                                <li><a href="#">Qwertyuii</a></li>
-                                <li><a href="#">Yasdhhdf</a></li>
-                                <li><a href="#">B</a></li>
-                                <li><a href="#">Urgdfgaxxx</a></li>
-                            </ul>
-                            </li>
-                            <li><a href="#">What is Go?</a></li>
-                            <li><a href="#">Qwertyuii</a></li>
-                            <li><a href="#">Yasdhhdf</a></li>
-                            <li><a href="#">B</a></li>
-                            <li><a href="#">Urgdfgaxxx</a></li>
-                        </ul>
-                        </li>
-                        <li><a href="#">News</a></li>
-                        <li><a href="#">About the AGA</a></li>
-                    </ul>
-                    <form id="sitesearch" action="#">
-                        <fieldset>
-                            <legend>Site Search</legend>
-                            <input type="text" id="searchbox" name="q" maxlength="255" value="">
-                            <input type="submit" id="searchbutton" value="Search">
-                        </fieldset>
-                    </form>
+                    <!--#include file="includes/navcol.html" -->
                 </div>
-
                 <div id="extracol">
-                    <h2 id="newsHL">News</h2>
-                    <ul id="news">
-                        <li><a href="#"><span>Exciting</span>Something
-                            really exciting happened.</a></li>
-                        <li><a href="#"><span>Price Wins Tengen</span>Lorem ipsum
-                            dolor sit amet, consectetur adipisicing elit.</a></li>
-                        <li><a href="#"><span>AGA Budget</span>Lorem ipsum dolar
-                            sit amet.</a></li>
-                        <li><a href="#"><span>Go on the Rise</span>Sed ut perspiciatis unde omnis iste natus error sit.</a></li>
-                    </ul>
+                    <!--#include file="includes/extracol.html" -->
                 </div>
             </div>
         </div>
