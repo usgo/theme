@@ -19,7 +19,6 @@ img {
     border: 0;
 }
 
-
 body {
     color: #000;
     background: #cc9933;
@@ -54,7 +53,6 @@ body {
 #content {
     margin: 0 160px 10px 170px;
     padding: 0 20px;
-    font-family: georgia, serif;
 }
 
 #rightcol {
@@ -64,6 +62,11 @@ body {
 }
 
 /* end columns */
+
+#content {
+    font-family: georgia, serif;
+    font-size: 14px;
+}
 
 h1, h2, h3, h4, h5, h6 {
     margin-top: .5em;
