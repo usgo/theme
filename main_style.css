@@ -228,7 +228,7 @@ body:after {
     font-family: verdana, arial, helvetica, sans-serif;
 }
 
-#rightcol h1 {
+#rightcol #newsHL {
     border-bottom: 1px solid green;
     margin: 0px;
     margin-top: 10px;
