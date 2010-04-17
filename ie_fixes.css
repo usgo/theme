@@ -5,6 +5,7 @@
 #navwrap,
 #news li,
 #wrapper,
-#fauxcolbgR {
+#fauxcolbgR,
+.containfloats {
     zoom: 1;
 }
