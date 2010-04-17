@@ -4,27 +4,13 @@
     <head>
         <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
         <title>Welcome to the American Go Association</title>
-        <link rel="stylesheet" type="text/css" href="main_style.css">
+        <link rel="stylesheet" type="text/css" href="style/main.css">
         <!--[if lte IE 7]>
-        <link rel="stylesheet" type="text/css" href="ie_fixes.css">
+        <link rel="stylesheet" type="text/css" href="style/ie_fixes.css">
         <![endif]--> 
 
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $('.mainnav a + ul')
-                    .addClass("hidable")
-                    .prev().addClass("shower")
-                           .toggle(function() { $(this).next().slideDown("fast");
-                                              },
-                                   function() { $(this).next().slideUp("fast");
-                                              })
-                           .click(function() { $(this).toggleClass("shower");
-                                               $(this).toggleClass("hider");
-                                             });
-                $('.hidable').hide();
-            });
-        </script>
+        <script type="text/javascript" src="scripts/expanding_menu.js"></script>
     </head>
     <body>
         <div id="header">
