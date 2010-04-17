@@ -30,12 +30,12 @@ body {
 
 /* columns */
 
-#container {  /* also fauxcolbgR */
+#container {  /* also fauxcolbgL */
     min-width: 580px;
-    background: #ffffcc url(images/rcol_bg.png) repeat-y top right;
+    background: #ffffcc url(images/lcol_bg.png) repeat-y top left;
 }
-#fauxcolbgL {
-    background: url(images/lcol_bg.png) repeat-y top left;
+#fauxcolbgR {
+    background: url(images/rcol_bg.png) repeat-y top right;
 }
 
 #leftcol {
