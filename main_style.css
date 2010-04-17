@@ -38,7 +38,7 @@ body {
     background: url(images/rcol_bg.png) repeat-y top right;
 }
 
-#leftcol {
+#navcol {
     float: left;
     width: 150px;
     padding: 10px;
@@ -55,7 +55,7 @@ body {
     padding: 0 20px 30px 20px;
 }
 
-#rightcol {
+#extracol {
     float: left;
     width: 160px;
     margin-left: -160px;
@@ -84,9 +84,14 @@ h4 { font-size: 1.15em; }
 h5 { font-size: 1.0em; }
 h6 { font-size: 0.8em; }
 
+a,
 a:link,
 a:visited {
     color: #654c19;
+}
+
+a:hover {
+    text-decoration: none;
 }
 
 #header {
@@ -228,7 +233,7 @@ body:after {
     font-family: verdana, arial, helvetica, sans-serif;
 }
 
-#rightcol #newsHL {
+#extracol #newsHL {
     border-bottom: 1px solid green;
     margin: 0px;
     margin-top: 10px;
