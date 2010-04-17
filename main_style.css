@@ -30,7 +30,7 @@ body {
 
 /* columns */
 
-#container {  /* also fauxcolbgL */
+#container {  /* also does the left faux column */
     min-width: 580px;
     background: #ffffcc url(images/lcol_bg.png) repeat-y top left;
 }
