@@ -8,55 +8,45 @@ body {
     font-family: verdana, arial, helvetica, sans-serif;
     font-size: 12px;
 
-    min-width: 580px; /*  2 * (Awp + Bp) + Cwp   */
 }
 
 /* columns */
 
-/* in comments:
- * A B C = columns
- * w = width
- * p = padding
- * wp = width + padding
- *
- * DON'T FORGET TO UPDATE ie_fixes.css when you change Cwp!
- */
-
-.column {
-    float: left;
-    position: relative;
-}
-
-#fauxcolbg {
+#fauxcolbgR {
     margin: 0;
     padding: 0;
 
     background: #ffffcc url(images/rcol_bg.png) repeat-y top right;
 }
-#wrapper {
-    padding-left: 170px;  /*  Awp  */
-    padding-right: 200px; /*  Cwp + Bp  */
+#fauxcolbgL {
+    margin: 0;
+    padding: 0;
     background: url(images/lcol_bg.png) repeat-y top left;
 }
 
 #leftcol {
-    width: 150px;        /*  Aw  */
-    padding: 10px;       /*  Ap  */
-    right: 210px;        /*  Awp + Bp  */
-    margin-left: -100%;  /*  -Bw  */
+    float: left;
+    width: 150px;
+    padding: 10px;
+    margin-left: -100%;
+}
+
+#wrapper {
+    float: left;
+    width: 100%;
 }
 
 #content {
-    padding: 20px; /*  Bp  */
-    width: 100%;   /*  Bw  */
-
+    margin: 0 160px 0 170px;
+    padding: 0 20px;
     font-family: georgia, serif;
 }
 
 #rightcol {
-    width: 160px;         /*  Cw  */
-    padding: 0;           /*  Cp  */
-    margin-right: -200px; /*  -(Cwp + Bp)  */
+    float: left;
+    width: 160px;
+    padding: 0;
+    margin-left: -160px;
 }
 
 /* end columns */

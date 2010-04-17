@@ -5,11 +5,6 @@
 #navwrap,
 #news li,
 #wrapper,
-#fauxcolbg {
+#fauxcolbgR {
     zoom: 1;
-}
-
-
-* html #leftcol {
-    left: 160px;  /*  Cwp  */
 }
