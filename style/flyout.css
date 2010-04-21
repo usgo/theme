@@ -1,14 +1,13 @@
 
 .mainnav {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-}
-
-#navcol {
     position: relative;
 }
 
+/* Must use left: -bugnum em; (instead of display: none) to fix a bug in IE7,
+ * where it would show the border for a sub-list that is not shown, after it
+ * was shown before 
+ *
+ * works okay in other browsers too, just a little less clear in meaning.*/
 .mainnav ul {
     position: absolute;
     left: -1000em;
