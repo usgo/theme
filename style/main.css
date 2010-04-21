@@ -120,9 +120,56 @@ a:hover {
 }
 
 .mainnav {
-    font-size: 1.2em;
+    font-size: 1.4em;
+    margin: 0;
+}
+
+.mainnav li {
     font-variant: small-caps;
-    font-weight: bold;
+    list-style-type: none;
+}
+
+.mainnav ul {
+    padding-left: 1.5em;
+    margin: 0;
+}
+
+.mainnav li li {
+    font-size: .9em;
+}
+
+.mainnav a.hider:hover,
+.mainnav a.shower:hover {
+    text-decoration: none;
+}
+
+.mainnav .hider {
+    background: url(../images/subtract.png) no-repeat center left;
+    padding-left: 16px;
+    margin-left: .25em;
+}
+
+.mainnav .shower {
+    background: url(../images/add.png) no-repeat center left;
+    padding-left: 16px;
+    margin-left: .25em;
+}
+
+/* preload these images, in newer browsers */
+body:after {
+    content: url(../images/add.png) url(../images/subtract.png);
+    display: none;
+}
+
+.mainnav a {
+    display: block;
+    text-decoration: none;
+    padding: 5px 0px 5px 10px;
+    color: #000;
+}
+
+.mainnav a:hover {
+    text-decoration: underline;
 }
 
 #sitesearch {
