@@ -1,0 +1,43 @@
+
+.mainnav {
+    position: relative;
+}
+
+.mainnav ul {
+    position: absolute;
+    left: 100%;
+    display: none;
+}
+
+.mainnav a {
+    text-decoration: none;
+    line-height: 24px;
+    padding: 30px;
+    background: red;
+    color: black;
+    display: block;
+}
+
+.mainnav a:hover,
+.mainnav li:hover > a {
+    background: blue;
+    color: white;
+}
+
+.mainnav,
+.mainnav ul {
+    margin: 0;
+    padding: 1px;
+    list-style-type: none;
+    white-space:nowrap;
+}
+
+.mainnav li {
+    display: inline;
+}
+
+.mainnav li:hover > ul {
+    display: block;
+    margin-top: -25px;
+    margin-left: -2px;
+}
