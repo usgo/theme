@@ -1,6 +1,5 @@
 /* Trigger non-standard IE hasLayout for certain objects.
  * Sometimes makes IE behave better, especially IE 6 */
-.mainnav li,
 #extracol,
 #navwrap,
 #news li,
@@ -9,3 +8,4 @@
 .containfloats {
     zoom: 1;
 }
+
