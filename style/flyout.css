@@ -12,24 +12,28 @@
 .mainnav a {
     text-decoration: none;
     line-height: 24px;
-    padding: 30px;
-    background: red;
-    color: black;
+    padding: 0 10px;
+    padding-right: 25px;
     display: block;
+    background: #f2f2c2;
 }
 
 .mainnav a:hover,
 .mainnav li:hover > a {
-    background: blue;
-    color: white;
+    color: black;
+    background: #cc9933;
 }
 
 .mainnav,
 .mainnav ul {
     margin: 0;
-    padding: 1px;
+    padding: 0px 1px;
     list-style-type: none;
     white-space:nowrap;
+}
+
+.mainnav ul {
+    border: 1px solid black;
 }
 
 .mainnav li {
@@ -39,5 +43,5 @@
 .mainnav li:hover > ul {
     display: block;
     margin-top: -25px;
-    margin-left: -2px;
+    margin-left: -4px;
 }
