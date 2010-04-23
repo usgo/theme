@@ -30,12 +30,18 @@ function fingerprint() {
  *
  * this is used to keep state of the menus between pages.
  */
-function init_menus() {
-    var options = {path: '/'};
+function init_expanding_menu() {
+    var options = {path: '/'}; // when you change me, change the one
+                               // further down the site at cookie writing
+
+    // IMPORTANT!: increment this version if you change anything about
+    // the cookie storage mechanism that is not backwards compatible.
+    //
+    // If in doubt, increment it!
     var menu_version = 3;
 
     // ensure cookies are enabled, otherwise return false
-    // this should signal that crappy flyout menu should be used
+    // this should signal that some other menu system should be used
     // instead, since that doesn't require cookies
     
     try {
@@ -140,7 +146,7 @@ function init_menus() {
                 }
 
                 $.cookie('saved_menu', JSON.stringify(to_write), {path: '/'});
-                });
+            });
 
     // add toggles (opposite ways for each case)
 
@@ -155,7 +161,3 @@ function init_menus() {
 
     return true;
 }
-
-$(document).ready(function() {
-    init_menus();
-});
