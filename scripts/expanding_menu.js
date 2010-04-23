@@ -5,7 +5,7 @@
  */
 function init_menus() {
     var options = {path: '/'};
-    var menu_version = 1;
+    var menu_version = 2;
 
     // ensure cookies are enabled, otherwise return false
     // this should signal that crappy flyout menu should be used
@@ -41,7 +41,23 @@ function init_menus() {
     window.cached_showhide = $('.mainnav .shower + .hidable').prev();
 
     try {
-        window.menu_status = JSON.parse($.cookie('saved_menu'));
+        var temp = JSON.parse($.cookie('saved_menu'));
+        
+        /* convert from compact array to expanded one */
+        window.menu_status = new Object();
+        window.menu_status.version = temp.version;
+        window.menu_status.shown = new Array();
+        for (var i = 0; i < window.cached_showhide.length; ++i) {
+            window.menu_status.shown[i] = false;
+        }
+        for (var i = 0; i < temp.shown.length; ++i) {
+            if (temp.shown[i] >= window.menu_status.shown.length) {
+                $.cookie('saved_menu', null, options);
+                throw("saved menu cookie corrupted");
+            } else {
+                window.menu_status.shown[temp.shown[i]] = true;
+            }
+        }
 
         if (window.menu_status.version != menu_version ||
             window.menu_status.shown.length != window.cached_showhide.length)
@@ -57,7 +73,7 @@ function init_menus() {
         // for ones that match, change classes from shower to hider for
         // the ones that are shown
 
-        for (i = 0; i < window.menu_status.shown.length; ++i) {
+        for (var i = 0; i < window.menu_status.shown.length; ++i) {
             //window.cached_showhide.eq(window.menu_status.shown[i]).removeClass('shower').addClass('hider');
             if (window.menu_status.shown[i]) {
                 window.cached_showhide.eq(i).removeClass('shower').addClass('hider');
@@ -68,7 +84,7 @@ function init_menus() {
         window.menu_status.version = menu_version;
         window.menu_status.shown = new Array();
         
-        for (i = 0; i < window.cached_showhide.length; ++i)
+        for (var i = 0; i < window.cached_showhide.length; ++i)
         {
             window.menu_status.shown[i] = false;
         }
@@ -76,9 +92,22 @@ function init_menus() {
 
     window.cached_showhide
         .click(function() { 
-                i = window.cached_showhide.index($(this));
+                var i = window.cached_showhide.index($(this));
                 window.menu_status.shown[i] = !window.menu_status.shown[i];
-                $.cookie('saved_menu', JSON.stringify(window.menu_status), {path: '/'});
+
+                /* convert to slightly more compact format
+                 * don't want cookies thing to be huge
+                 */
+                var to_write = new Object();
+                to_write.version = window.menu_status.version;
+                to_write.shown = new Array();
+                for (var j = 0; j < window.menu_status.shown.length; ++j) {
+                    if (window.menu_status.shown[j]) {
+                        to_write.shown.push(j);
+                    }
+                }
+
+                $.cookie('saved_menu', JSON.stringify(to_write), {path: '/'});
                 });
 
     // add toggles (opposite ways for each case)
