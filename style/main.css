@@ -153,27 +153,6 @@ a:hover {
     text-decoration: underline;
 }
 
-.mainnav a.hider:hover,
-.mainnav a.shower:hover {
-    text-decoration: none;
-}
-
-.mainnav .hider {
-    background: url(../images/subtract.png) no-repeat 7px center;
-    padding-left: 20px;
-}
-
-.mainnav .shower {
-    background: url(../images/add.png) no-repeat 7px center;
-    padding-left: 20px;
-}
-
-/* preload these images, in newer browsers */
-body:after {
-    content: url(../images/add.png) url(../images/subtract.png);
-    display: none;
-}
-
 #sitesearch {
     width: 150px;
     margin: 0 auto;
