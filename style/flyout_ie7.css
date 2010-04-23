@@ -1,0 +1,15 @@
+/* For whatever reason, the flyout only works correctly in IE7
+ * if .mainnav is absolutely positioned.  Stupid IE.
+ */
+#navcol.ie7fix {
+    position: relative;
+    padding-top: 20em; /* move content of navcol down to make room for
+                           absolutely positioned .mainnav */
+}
+
+.flyout.ie7fix {
+    position: absolute !imporant;
+    left: 0;
+    top: 10px;
+}
+
