@@ -19,8 +19,9 @@
     $(document).ready(function() {
         if (init_expanding_menu()) {
             $('.mainnav').removeClass('flyout')
-                         .removeClass('ie7fix')
                          .addClass('expand');
+            $('.ie7fix').removeClass('ie7fix');
+            /* only needed for flyout */
         }
     });
 </script>
