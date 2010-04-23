@@ -8,8 +8,14 @@
 <script type="text/javascript" src="scripts/jquery.cookie.js"></script>
 <script type="text/javascript" src="scripts/json2.js"></script>
 <script type="text/javascript" src="scripts/expanding_menu.js"></script>
+<link rel="stylesheet" type="text/css" href="style/expand.css">
+<!--[if lte IE 6]><!-->
+    <link rel="stylesheet" type="text/css" href="style/flyout.css">
+<!--<![endif]-->
 <script type="text/javascript">
     $(document).ready(function() {
-        init_expanding_menu();
+        if (init_expanding_menu()) {
+            $('.mainnav').removeClass('flyout').addClass('expand');
+        }
     });
 </script>

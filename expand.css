@@ -1,0 +1,21 @@
+.expand a.hider:hover,
+.expand a.shower:hover {
+    text-decoration: none;
+}
+
+.expand .hider {
+    background: url(../images/subtract.png) no-repeat 7px center;
+    padding-left: 20px;
+}
+
+.expand .shower {
+    background: url(../images/add.png) no-repeat 7px center;
+    padding-left: 20px;
+}
+
+/* preload these images, in newer browsers */
+body:after {
+    content: url(../images/add.png) url(../images/subtract.png);
+    display: none;
+}
+
