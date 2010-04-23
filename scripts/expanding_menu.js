@@ -6,6 +6,7 @@
 function init_menus() {
     var options = {path: '/'};
     var menu_version = 1;
+
     // ensure cookies are enabled, otherwise return false
     // this should signal that crappy flyout menu should be used
     // instead, since that doesn't require cookies
@@ -33,31 +34,53 @@ function init_menus() {
 
     // get cookie.  check main version.  throw out data if old, skip to hiding
     // all.
+
+    // stores the status that will also be put into a cookie (in JSON)
+    window.menu_status = null;
     
-    var saved = null;
-    var cached = $('.mainnav .shower + .hidable').prev();
+    window.cached_showhide = $('.mainnav .shower + .hidable').prev();
 
     try {
-        saved = $.parseJSON($.cookie('saved_menu'));
+        window.menu_status = JSON.parse($.cookie('saved_menu'));
 
-        if (saved.version != menu_version ||
-            saved.length != cached.length)
+        if (window.menu_status.version != menu_version ||
+            window.menu_status.shown.length != window.cached_showhide.length)
         {
             throw("delete cookie");
         }
     } catch (e) {
         $.cookie('saved_menu', null, options);
+        window.menu_status = null;
     }
 
-    if (saved != null) {
+    if (window.menu_status != null) {
         // for ones that match, change classes from shower to hider for
         // the ones that are shown
 
-        for (i = 0; i < saved.shown.length; ++i) {
-            cached.eq(saved.shown[i]).removeClass('shower').addClass('hider');
+        for (i = 0; i < window.menu_status.shown.length; ++i) {
+            //window.cached_showhide.eq(window.menu_status.shown[i]).removeClass('shower').addClass('hider');
+            if (window.menu_status.shown[i]) {
+                window.cached_showhide.eq(i).removeClass('shower').addClass('hider');
+            }
         }
-
+    } else {
+        window.menu_status = new Object();
+        window.menu_status.version = menu_version;
+        window.menu_status.shown = new Array();
+        
+        for (i = 0; i < window.cached_showhide.length; ++i)
+        {
+            window.menu_status.shown[i] = false;
+        }
     }
+
+    window.cached_showhide
+        .click(function() { 
+                i = window.cached_showhide.index($(this));
+                window.menu_status.shown[i] = !window.menu_status.shown[i];
+                $.cookie('saved_menu', JSON.stringify(window.menu_status), {path: '/'});
+                });
+
     // add toggles (opposite ways for each case)
 
     $('.shower').toggle(function() { $(this).next().slideDown("fast"); },
@@ -73,5 +96,5 @@ function init_menus() {
 }
 
 $(document).ready(function() {
-        alert(init_menus());
+        init_menus();
 });
