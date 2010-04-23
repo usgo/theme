@@ -1,3 +1,30 @@
+/* get a fingerprint of information about .mainnavs
+ *
+ * this is important for the next function, where we need to
+ * discard the cookie info if something has changed
+ */
+function fingerprint() {
+    var temp = $('.mainnav');
+    var res = temp.length * 255;
+    
+    /* just do various things to capture a little bit of info from
+     * every .mainnav that exists
+     */
+    temp.each(function(i) {
+            var str = $(this).attr('class') + $(this).attr('id');
+            res += str.length * (i+1);
+            for (var j = 0; j < str.length; ++j) {
+                res += str.charCodeAt(j) * (i+1) * (j+1) % 467;
+            }
+
+            res += $('a', this).length * (i+1);
+            res += $('ul', this).length * (i+1) * 17;
+            res %= 100003;
+        });
+
+    return res;
+}
+
 /* reads from cookie the list of open .hidable elements that are sub
  * a .mainnav
  *
@@ -5,7 +32,7 @@
  */
 function init_menus() {
     var options = {path: '/'};
-    var menu_version = 2;
+    var menu_version = 3;
 
     // ensure cookies are enabled, otherwise return false
     // this should signal that crappy flyout menu should be used
@@ -37,8 +64,9 @@ function init_menus() {
 
     // stores the status that will also be put into a cookie (in JSON)
     window.menu_status = null;
-    
+
     window.cached_showhide = $('.mainnav .shower + .hidable').prev();
+    var fp = fingerprint();
 
     try {
         var temp = JSON.parse($.cookie('saved_menu'));
@@ -46,6 +74,7 @@ function init_menus() {
         /* convert from compact array to expanded one */
         window.menu_status = new Object();
         window.menu_status.version = temp.version;
+        window.menu_status.fp = temp.fp;
         window.menu_status.shown = new Array();
         for (var i = 0; i < window.cached_showhide.length; ++i) {
             window.menu_status.shown[i] = false;
@@ -60,6 +89,7 @@ function init_menus() {
         }
 
         if (window.menu_status.version != menu_version ||
+            window.menu_status.fp != fp ||
             window.menu_status.shown.length != window.cached_showhide.length)
         {
             throw("delete cookie");
@@ -82,6 +112,7 @@ function init_menus() {
     } else {
         window.menu_status = new Object();
         window.menu_status.version = menu_version;
+        window.menu_status.fp = fp;
         window.menu_status.shown = new Array();
         
         for (var i = 0; i < window.cached_showhide.length; ++i)
@@ -100,6 +131,7 @@ function init_menus() {
                  */
                 var to_write = new Object();
                 to_write.version = window.menu_status.version;
+                to_write.fp = window.menu_status.fp;
                 to_write.shown = new Array();
                 for (var j = 0; j < window.menu_status.shown.length; ++j) {
                     if (window.menu_status.shown[j]) {
@@ -125,5 +157,5 @@ function init_menus() {
 }
 
 $(document).ready(function() {
-        init_menus();
+    init_menus();
 });
