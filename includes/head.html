@@ -4,6 +4,9 @@
 <!--[if lte IE 7]>
     <link rel="stylesheet" type="text/css" href="style/ie_fixes.css">
 <![endif]--> 
+<!--[if IE 7]>
+    <link rel="stylesheet" type="text/css" href="style/flyout_ie7.css">
+<![endif]--> 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
 <script type="text/javascript" src="scripts/jquery.cookie.js"></script>
 <script type="text/javascript" src="scripts/json2.js"></script>
@@ -15,7 +18,10 @@
 <script type="text/javascript">
     $(document).ready(function() {
         if (init_expanding_menu()) {
-            $('.mainnav').removeClass('flyout').addClass('expand');
+            $('.mainnav').removeClass('flyout')
+                         .addClass('expand');
+            $('.ie7fix').removeClass('ie7fix');
+            /* only needed for flyout */
         }
     });
 </script>

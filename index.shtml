@@ -46,7 +46,7 @@
                         </p>
                     </div>
                 </div>
-                <div id="navcol">
+                <div id="navcol" class="ie7fix">
                     <!--#include file="includes/navcol.html" -->
                 </div>
                 <div id="extracol">
