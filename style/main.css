@@ -142,7 +142,9 @@ a:hover {
     margin: 0;
 }
 
-.mainnav a {
+.mainnav a,
+.mainnav a:link,
+.mainnav a:visited {
     display: block;
     text-decoration: none;
     padding: 5px 0px 5px 10px;

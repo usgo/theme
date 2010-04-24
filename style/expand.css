@@ -3,12 +3,18 @@
     text-decoration: none;
 }
 
-.expand .hider {
+.expand .hider,
+.expand .hider:link,
+.expand .hider:visited,
+.expand .hider:hover {
     background: url(../images/subtract.png) no-repeat 7px center;
     padding-left: 20px;
 }
 
-.expand .shower {
+.expand .shower,
+.expand .shower:link,
+.expand .shower:visited,
+.expand .shower:hover {
     background: url(../images/add.png) no-repeat 7px center;
     padding-left: 20px;
 }
