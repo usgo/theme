@@ -142,7 +142,12 @@ a:hover {
     margin: 0;
 }
 
-.mainnav a {
+.mainnav .opener {
+    cursor: default;
+}
+
+.mainnav a,
+.mainnav .opener {
     display: block;
     text-decoration: none;
     padding: 5px 0px 5px 10px;

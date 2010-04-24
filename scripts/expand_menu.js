@@ -17,7 +17,8 @@ function fingerprint() {
                 res += str.charCodeAt(j) * (i+1) * (j+1) % 467;
             }
 
-            res += $('a', this).length * (i+1);
+            res += $('.opener', this).length * (i+1);
+            res += $('a', this).length * (i+1) * 7;
             res += $('ul', this).length * (i+1) * 17;
             res %= 100003;
         });
@@ -49,7 +50,7 @@ function init_expanding_menu() {
     
 
     // set hidable for matching uls, and shower for matching a's
-    $('.mainnav a + ul')
+    $('.mainnav .opener + ul')
         .addClass("hidable")
         .prev().addClass("shower")
                 .click(function() { $(this).toggleClass("shower");

@@ -13,7 +13,8 @@
     display: block;
 }
 
-.flyout a {
+.flyout a,
+.flyout .opener {
     text-decoration: none;
     line-height: 24px;
     padding: 4px 10px;
@@ -23,8 +24,8 @@
     background: #f2f2c2;
 }
 
-.flyout a:hover,
-.flyout li:hover > a {
+.flyout .opener:hover,
+.flyout li:hover > .opener {
     color: black;
     background: #cc9933;
 }

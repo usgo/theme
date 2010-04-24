@@ -1,20 +1,13 @@
-.expand a.hider:hover,
-.expand a.shower:hover {
-    text-decoration: none;
+.expand .opener {
+    cursor: pointer;
 }
 
-.expand .hider,
-.expand .hider:link,
-.expand .hider:visited,
-.expand .hider:hover {
+.expand .opener.hider {
     background: url(../images/subtract.png) no-repeat 7px center;
     padding-left: 20px;
 }
 
-.expand .shower,
-.expand .shower:link,
-.expand .shower:visited,
-.expand .shower:hover {
+.expand .opener.shower {
     background: url(../images/add.png) no-repeat 7px center;
     padding-left: 20px;
 }
