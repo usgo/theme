@@ -3,7 +3,7 @@
  */
 #navcol.ie7fix {
     position: relative;
-    padding-top: 20em; /* move content of navcol down to make room for
+    padding-top: 30em; /* move content of navcol down to make room for
                            absolutely positioned .mainnav */
 }
 
