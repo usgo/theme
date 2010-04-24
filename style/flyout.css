@@ -16,7 +16,7 @@
 .flyout a {
     text-decoration: none;
     line-height: 24px;
-    padding: 0 10px;
+    padding: 4px 10px;
     padding-right: 25px;
     display: block;
     color: black;
@@ -45,9 +45,14 @@
     left: 100%;
 }
 
+.flyout li li,
+.flyout li li li {
+    font-size: 100%;
+}
+
 .flyout li:hover > ul {
     left: 100%;
-    margin-top: -25px;
+    margin-top: -33px;
     margin-left: -4px;
 }
 
