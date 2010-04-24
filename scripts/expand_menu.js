@@ -35,24 +35,18 @@ function init_expanding_menu() {
     // the cookie storage mechanism that is not backwards compatible.
     //
     // If in doubt, increment it!
-    var menu_version = 3;
+    var menu_version = 4;
+
+    $.cookies.setOptions({path: '/'});
 
     // ensure cookies are enabled, otherwise return false
     // this should signal that some other menu system should be used
     // instead, since that doesn't require cookies
-    
-    try {
-        var rand = Math.random() + '';
-        $.cookie('test_cookie', rand, {path: '/'});
 
-        if ($.cookie('test_cookie') != rand) {
-            return false;
-        }
-
-        $.cookie('test_cookie', null, {path: '/'});
-    } catch(e) {
+    if (!$.cookies.test()) {
         return false;
     }
+    
 
     // set hidable for matching uls, and shower for matching a's
     $('.mainnav a + ul')
@@ -72,7 +66,7 @@ function init_expanding_menu() {
     var fp = fingerprint();
 
     try {
-        var temp = JSON.parse($.cookie('saved_menu'));
+        var temp = $.cookies.get('saved_menu');
         
         /* convert from compact array to expanded one */
         window.menu_status = new Object();
@@ -84,7 +78,7 @@ function init_expanding_menu() {
         }
         for (var i = 0; i < temp.shown.length; ++i) {
             if (temp.shown[i] >= window.menu_status.shown.length) {
-                $.cookie('saved_menu', null, {path: '/'});
+                $.cookies.del('saved_menu');
                 throw("saved menu cookie corrupted");
             } else {
                 window.menu_status.shown[temp.shown[i]] = true;
@@ -98,7 +92,7 @@ function init_expanding_menu() {
             throw("delete cookie");
         }
     } catch (e) {
-        $.cookie('saved_menu', null, {path: '/'});
+        $.cookies.del('saved_menu');
         window.menu_status = null;
     }
 
@@ -142,7 +136,7 @@ function init_expanding_menu() {
                     }
                 }
 
-                $.cookie('saved_menu', JSON.stringify(to_write), {path: '/'});
+                $.cookies.set('saved_menu', to_write);
             });
 
     // add toggles (opposite ways for each case)
