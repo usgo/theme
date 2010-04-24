@@ -31,9 +31,6 @@ function fingerprint() {
  * this is used to keep state of the menus between pages.
  */
 function init_expanding_menu() {
-    var options = {path: '/'}; // when you change me, change the one
-                               // further down the site at cookie writing
-
     // IMPORTANT!: increment this version if you change anything about
     // the cookie storage mechanism that is not backwards compatible.
     //
@@ -46,13 +43,13 @@ function init_expanding_menu() {
     
     try {
         var rand = Math.random() + '';
-        $.cookie('test_cookie', rand, options);
+        $.cookie('test_cookie', rand, {path: '/'});
 
         if ($.cookie('test_cookie') != rand) {
             return false;
         }
 
-        $.cookie('test_cookie', null, options);
+        $.cookie('test_cookie', null, {path: '/'});
     } catch(e) {
         return false;
     }
@@ -87,7 +84,7 @@ function init_expanding_menu() {
         }
         for (var i = 0; i < temp.shown.length; ++i) {
             if (temp.shown[i] >= window.menu_status.shown.length) {
-                $.cookie('saved_menu', null, options);
+                $.cookie('saved_menu', null, {path: '/'});
                 throw("saved menu cookie corrupted");
             } else {
                 window.menu_status.shown[temp.shown[i]] = true;
@@ -101,7 +98,7 @@ function init_expanding_menu() {
             throw("delete cookie");
         }
     } catch (e) {
-        $.cookie('saved_menu', null, options);
+        $.cookie('saved_menu', null, {path: '/'});
         window.menu_status = null;
     }
 
