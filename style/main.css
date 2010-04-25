@@ -10,6 +10,12 @@ acronym {
     border-bottom: 1px dashed black;
 }
 
+blockquote {
+    margin-left: 0.75em;
+    padding-left: 0.75em;
+    border-left: 1px dotted black;
+}
+
 ol {
     margin-left: 1.4em;
     list-style: decimal;
