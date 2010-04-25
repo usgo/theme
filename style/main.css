@@ -16,6 +16,15 @@ blockquote {
     border-left: 1px dotted black;
 }
 
+hr {
+    color: black;
+    background-color: black;
+    height: 3px;
+    width: 85%;
+    margin: 1.5em auto;
+    clear: both;
+}
+
 ol {
     margin-left: 1.4em;
     list-style: decimal;
