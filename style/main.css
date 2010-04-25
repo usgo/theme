@@ -69,16 +69,24 @@ a:hover {
 }
 
 #ie6note {
-    width: 120px;
-    height: 50px;
+    width: 250px;
+    height: 30px;
+    color: white;
     background: black;
     position: absolute;
-    left: 75px;
+    left: 100px;
     top: 10px;
+    padding: 5px;
+    text-align: center;
 }
 
 #ie6note h2 {
-    margin: 10px auto;
+    margin: 5px auto;
+    color: red;
+}
+
+#ie6note a {
+    color: red;
 }
 
 #logo {
