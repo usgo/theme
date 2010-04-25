@@ -20,6 +20,18 @@
 
                         <h2>Header Level 2</h2>
 
+                        <p><abbr title="American Go Association">AGA</abbr>
+                        blah blah <acronym title="laugh out loud">LOL</acronym></p>
+                        <address>Hello, I am an address</address>
+                        <p><em>Emphasized text</em>
+                        <strong>Strong text</strong>
+                        <dfn>Definition term</dfn>
+                        <code>Computer code text</code>
+                        <samp>Sample computer code text</samp>
+                        <kbd>Keyboard text</kbd>
+                        <var>Variable</var>
+                        <cite>Citation</cite></p>
+                        <hr>
                         <ol>
                             <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
                             <li>Aliquam tincidunt mauris eu risus.</li>
@@ -61,10 +73,11 @@
                             <li>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</li>
                         </ul>
                         <form action="#" method="post">
-                            <div>
+                            <fieldset>
+                                <legend>A Fieldset</legend>
                                 <label for="name">Text Input:</label>
                                 <input type="text" name="name" id="name" value="" tabindex="1" />
-                            </div>
+                            </fieldset>
 
                             <div>
                                 <h4>Radio Button Choice</h4>
