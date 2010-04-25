@@ -5,6 +5,11 @@ html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, var, form
     font-weight: normal;
 }
 
+abbr,
+acronym {
+    border-bottom: 1px dashed black;
+}
+
 ol {
     margin-left: 1.4em;
     list-style: decimal;
