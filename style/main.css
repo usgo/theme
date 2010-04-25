@@ -200,7 +200,8 @@ a:hover {
 #searchbox {
     width: 130px;
     margin: 0 auto;
-    background: white;
+    padding-left: 20px;
+    background: white url('../images/search.png') no-repeat 2px center;
     color: black;
     display: block;
     border: 1px solid black;
