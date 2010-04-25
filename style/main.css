@@ -245,6 +245,12 @@ a:hover {
     padding: 10px 5px;
 }
 
+#news .rss {
+    background-image: url('../images/rss.png');
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+
 #news a:link,
 #news a:visited {
     color: #000;
@@ -252,7 +258,7 @@ a:hover {
 }
 
 #news a:hover {
-    background: #c93;
+    background-color: #c93;
 }
 
 #news a:hover span {
