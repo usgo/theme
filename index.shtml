@@ -9,6 +9,7 @@
     <body>
         <div id="header">
             <!--#include file="includes/header.html" -->
+            <!--#include file="includes/navbar.html" -->
         </div>
         <div id="container">
             <div id="fauxcolbgR" class="containfloats">
