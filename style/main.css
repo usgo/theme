@@ -81,7 +81,7 @@ a:hover {
 
 #header {
     height: 130px;
-    background: transparent url("../images/goban_bg.png") no-repeat;
+    background: transparent url("../images/rough.png") no-repeat;
     background-position: top right;
 
     margin-top: -1px;
