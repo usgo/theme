@@ -302,7 +302,6 @@ a:hover {
 
 /* these tags are needed for strict HTML verification, but shouldn't really
  * change the displayed result usually */
-legend { display: none; }
 fieldset { border: 0; margin: 0; padding: 0; }
 
 /* very useful, ensures that a container with this class will enlarge
