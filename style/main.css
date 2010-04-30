@@ -5,7 +5,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, var, form
     font-weight: normal;
 }
 
-abbr,
+abbr, 
 acronym {
     border-bottom: 1px dashed black;
 }
@@ -117,7 +117,7 @@ a:hover {
 }
 
 #logo img {
-    padding: 0;
+    padding: 2px 0 0 1px;
     margin: 5px;
     margin-bottom: 0;
 }
