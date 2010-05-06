@@ -5,7 +5,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, var, form
     font-weight: normal;
 }
 
-abbr, 
+abbr,
 acronym {
     border-bottom: 1px dashed black;
 }
@@ -41,7 +41,7 @@ img {
 
 body {
     color: #000;
-    background: #cc9933;
+    background: #a04500;
     
     font-family: verdana, arial, helvetica, sans-serif;
     font-size: 12px;
@@ -81,7 +81,7 @@ a:hover {
 
 #header {
     height: 130px;
-    background: transparent url("../images/new_goban_bg.png") no-repeat;
+    background: transparent url("../images/goban_bg.png") no-repeat;
     background-position: top right;
 
     margin-top: -1px;
@@ -267,7 +267,7 @@ a:hover {
 }
 
 #news a:hover {
-    background-color: #c93;
+    background-color: #a04500;
 }
 
 #news a:hover span {
