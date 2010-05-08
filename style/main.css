@@ -41,8 +41,7 @@ img {
 
 body {
     color: #000;
-    background: #a04500;
-    
+    background: #a04500 url('../images/gradient_bg.png') repeat-y left top;
     font-family: verdana, arial, helvetica, sans-serif;
     font-size: 12px;
     min-width: 580px;
