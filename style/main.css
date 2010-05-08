@@ -41,7 +41,7 @@ img {
 
 body {
     color: #000;
-    background: #b14c00 url('../images/gradient_bg.png') repeat-y left top;
+    background: #aa4900 url('../images/gradient_bg.png') repeat-y left top;
     font-family: verdana, arial, helvetica, sans-serif;
     font-size: 12px;
     min-width: 580px;
@@ -266,7 +266,7 @@ a:hover {
 }
 
 #news a:hover {
-    background-color: #b14c00;
+    background-color: #aa4900;
 }
 
 #news a:hover span {
