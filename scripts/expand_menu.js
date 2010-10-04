@@ -1,3 +1,11 @@
+/*
+ * Copyright 2010, Joshua Simmons
+ *
+ * Implements a menu with clickable expanding parts.  Requires jQuery.
+ *
+ */
+
+
 /* get a fingerprint of information about .mainnavs
  *
  * this is important for the next function, where we need to
