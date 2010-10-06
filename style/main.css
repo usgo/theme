@@ -60,10 +60,10 @@ th {
     padding: 5px;
 }
 
-tr:nth-child(even) {
+tr:nth-child(even), tr.even {
     background: #d6ffcc;
 }
-tr:nth-child(odd) {
+tr:nth-child(odd), tr.odd {
     background: #d3d3af;
 }
 
