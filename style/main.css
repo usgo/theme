@@ -51,6 +51,10 @@ table, th, td {
     border: 1px solid black;
 }
 
+th, td {
+    padding: 3px;
+}
+
 body {
     color: #000;
     background: #aa4900 url('../images/gradient_bg.png') repeat-y left top;
