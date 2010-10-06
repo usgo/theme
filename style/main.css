@@ -55,6 +55,14 @@ th, td {
     padding: 3px;
 }
 
+th {
+    background: #b3b38f;    
+}
+
+tr:nth-child(even) {
+    background: #d6ffcc;
+}
+
 #content form, 
 #content table, 
 #content ol, 
