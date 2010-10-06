@@ -51,12 +51,13 @@ table, th, td {
     border: 1px solid black;
 }
 
-th, td {
+td {
     padding: 3px;
 }
 
 th {
-    background: #b3b38f;    
+    background: #b3b38f;
+    padding: 5px;
 }
 
 tr:nth-child(even) {
