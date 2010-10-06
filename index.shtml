@@ -121,18 +121,18 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
+                                    <th>Heading 1</th>
+                                    <th>A very long long long long Heading</th>
+                                    <th>Heading 3</th>
+                                    <th>Heading 4</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>I am some data.</td>
+                                    <td>So am I</td>
+                                    <td>4.0</td>
+                                    <td>LONGGGGGGGGGGGGggggggggggggg</td>
                                 </tr>
                                 <tr>
                                     <td></td>
@@ -141,10 +141,10 @@
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
                                 </tr>
                             </tbody>
                         </table>
