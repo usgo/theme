@@ -55,6 +55,14 @@ th, td {
     padding: 3px;
 }
 
+#content form, 
+#content table, 
+#content ol, 
+#content ul {
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
 body {
     color: #000;
     background: #aa4900 url('../images/gradient_bg.png') repeat-y left top;
