@@ -264,10 +264,6 @@ a:hover {
     width: 5em;
 }
 
-#content h1, h2, h3, h4, h5, h6 {
-    font-family: verdana, arial, helvetica, sans-serif;
-}
-
 #extracol #newsHL {
     border-bottom: 1px solid green;
     margin: 0px;
