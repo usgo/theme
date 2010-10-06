@@ -62,6 +62,9 @@ th {
 tr:nth-child(even) {
     background: #d6ffcc;
 }
+tr:nth-child(odd) {
+    background: #d3d3af;
+}
 
 #content form, 
 #content table, 
