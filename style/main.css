@@ -202,14 +202,14 @@ a:hover {
     text-decoration: underline;
 }
 
-#sitesearch {
+.search {
     width: 150px;
     margin: 0 auto;
     margin-top: 30px;
     display: block;
 }
 
-#searchbox {
+.searchbox {
     width: 130px;
     margin: 0 auto;
     padding-left: 20px;
@@ -219,7 +219,7 @@ a:hover {
     border: 1px solid black;
 }
 
-#searchbutton {
+.searchbutton {
     display: block;
     margin: 2px auto;
     width: 5em;
