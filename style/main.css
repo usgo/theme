@@ -40,7 +40,7 @@ ul {
 }
 
 img {
-    border: 0;
+    border: 2px solid black;
 }
 
 body {
@@ -89,6 +89,10 @@ a:hover {
 
     margin-top: -1px;
     border-top: 1px solid white;
+}
+
+#header img {
+    border: none;
 }
 
 #ie6note {
