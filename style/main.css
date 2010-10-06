@@ -11,7 +11,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, var, form
 
 abbr,
 acronym {
-    border-bottom: 1px dashed black;
+    border: none;
 }
 
 blockquote {
