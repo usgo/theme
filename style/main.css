@@ -335,12 +335,9 @@ a:hover {
     padding: 0;
 }
 
-/* these tags are needed for strict HTML verification, but shouldn't really
- * change the displayed result usually */
 fieldset { border: 0; margin: 0; padding: 0; }
 
-/* very useful, ensures that a container with this class will enlarge
- * to keep floats contained inside it */
+/* to keep floats contained inside */
 .containfloats:after {
     content: ".";
     display: block;
