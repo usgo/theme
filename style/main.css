@@ -73,6 +73,7 @@ table, th, td {
 caption {
     caption-side: bottom;
     text-align: right;
+    font-style: italic;
 }
 
 td {
