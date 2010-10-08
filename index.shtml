@@ -77,40 +77,49 @@
                                 <legend>A Fieldset</legend>
                                 <label for="name">Text Input:</label>
                                 <input type="text" name="name" id="name" value="" tabindex="1" />
+                                <fieldset>
+                                    <legend>Some radiobuttons</legend>
+                                    <label for="radio-choice-1"><input type="radio" name="radios" id="radio-choice-1" tabindex="2" value="choice-1" />Choice 1</label>
+                                    <label for="radio-choice-2"><input type="radio" name="radios" id="radio-choice-2" tabindex="3" value="choice-2" />Choice 2</label>
+                                </fieldset>
                             </fieldset>
-
-                            <div>
-                                <h4>Radio Button Choice</h4>
-
-                                <label for="radio-choice-1">Choice 1</label>
-                                <input type="radio" name="radios" id="radio-choice-1" tabindex="2" value="choice-1" />
-
-                                <label for="radio-choice-2">Choice 2</label>
-                                <input type="radio" name="radios" id="radio-choice-2" tabindex="3" value="choice-2" />
-                            </div>
-
-                            <div>
-                                <label for="select-choice">Select Dropdown Choice:</label>
+                            <fieldset>
+                                <label for="select-choice">Select Choice:</label>
                                 <select name="select-choice" id="select-choice">
                                     <option value="Choice 1">Choice 1</option>
                                     <option value="Choice 2">Choice 2</option>
                                     <option value="Choice 3">Choice 3</option>
                                 </select>
-                            </div>
-
-                            <div>
                                 <label for="textarea">Textarea:</label>
                                 <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
-                            </div>
-
-                            <div>
-                                <label for="checkbox">Checkbox:</label>
-                                <input type="checkbox" name="checkbox" id="checkbox" />
-                            </div>
-
-                            <div>
-                                <input type="submit" value="Submit" />
-                            </div>
+                                <fieldset>
+                                    <legend>Some checkboxes</legend>
+                                    <label for="checkbox"><input type="checkbox" name="checkbox" id="checkbox" />Checkbox</label>
+                                    <label for="checkbox2"><input type="checkbox" name="checkbox2" id="checkbox2" />Checkbox</label>
+                                    <label for="checkbox3"><input type="checkbox" name="checkbox3" id="checkbox3" />Checkbox</label>
+                                    <label for="checkbox4"><input type="checkbox" name="checkbox4" id="checkbox4" />Checkbox</label>
+                                </fieldset>
+                                <button name="submit" type="submit" value="Submit">Submit</button>
+                            </fieldset>
+                        </form>
+                        <form action="#" method="post">
+                            <fieldset>
+                                <legend>Personal Information</legend>
+                                <label for="firstname" accesskey="f">First name: </label>
+                                <input type="text" id="firstname" name="firstname" tabindex="1" value="" title="first name" />
+                                <label for="lastname" accesskey="l">Last name: </label>
+                                <input type="text" id="lastname" name="lastname" tabindex="2" title="last name" />
+                                <label for="email" class="required" accesskey="e">Email: </label>
+                                <input type="text" id="email" name="email" tabindex="3" title="email" />
+                                <small>I am some sort of note that will help you fill out this form.</small>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Comments</legend>
+                                <label for="comments" accesskey="c">Comments: </label>
+                                <textarea name="comments" rows="3" cols="23" id="comments" tabindex="4" title="comments"></textarea>
+                                <button name="submit" type="submit" value="Submit">Submit</button>
+                                <button name="reset" type="reset" value="Reset">Reset</button>
+                            </fieldset>
                         </form>
                         <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
                         <ol>

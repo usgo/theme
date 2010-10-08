@@ -105,6 +105,88 @@ tr:hover td {
     margin-bottom: .5em;
 }
 
+#content form {
+    margin: .5em auto;
+    width: 370px;
+    min-width: 370px;
+    max-width: 370px;
+    background: #b3b38f;    
+    border: 2px solid black;
+}
+
+#content form p {
+    text-align: left;
+}
+
+#content fieldset {
+    margin: .5em;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border: 2px solid black;
+    background: #d6ffcc;
+}
+
+#content legend {
+    margin-left: 2em;
+    border: 2px solid black;
+    font-size: 1.1em;
+    padding: 4px;
+    background: #d3d3af;    
+}
+
+#content label {
+    float: left;
+    width: 120px;
+    padding: 2px 6px;
+    text-align: right;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+#content input,
+#content textarea,
+#content select {
+    padding: 1px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    width: 205px;
+    border: 2px solid black;
+    color: black;
+    background: white;
+}
+
+#content fieldset fieldset {
+    width: 207px;
+    clear: both;
+    margin-left: 132px;
+}
+
+#content fieldset fieldset legend {
+    margin-left: .75em;
+}
+
+#content fieldset fieldset label {
+    padding: 0;
+    margin: 0 .5em;
+    text-align: left;
+    display: block;
+    float: left;
+    width: auto;
+}
+
+#content form small {
+    display: block;
+    clear: both;
+    margin-left: 132px;
+    text-align: left;
+}
+
+#content button {
+    margin: 4px;
+    margin-right: 12px;
+    float: right;
+}
+
 body {
     color: #000;
     background: #aa4900 url('../images/gradient_bg.png') repeat-y left top;
