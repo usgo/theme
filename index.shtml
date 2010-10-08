@@ -119,6 +119,7 @@
                             <li>Vestibulum auctor dapibus neque.</li>
                         </ol>
                         <table>
+                            <caption>A table full of bogus data for testing.</caption>
                             <thead>
                                 <tr>
                                     <th>Heading 1</th>
