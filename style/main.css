@@ -91,6 +91,11 @@ tr:nth-child(odd), tr.odd {
     background: #d3d3af;
 }
 
+tr:hover td {
+    background: #642020;
+    color: white;
+}
+
 #content form, 
 #content table, 
 #content ol, 
