@@ -18,16 +18,4 @@
 <!--[if lte IE 8]>
     <link rel="stylesheet" type="text/css" href="style/ie_fixes.css?v=5" />
 <![endif]-->
-
-<script type="text/javascript">
-    $(document).ready(function() {
-        if (init_expanding_menu()) {
-            $('.mainnav').removeClass('flyout')
-                         .addClass('expand');
-            $('.ie7fix').removeClass('ie7fix');
-            /* only needed for flyout */
-        }
-        $('tr:nth-child(odd)').addClass('odd');
-        $('tr:nth-child(even)').addClass('even');
-    });
-</script>
+<script type="text/javascript" src="scripts/startup.js?v=1"></script>
