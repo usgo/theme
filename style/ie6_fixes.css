@@ -11,3 +11,7 @@
 .mainnav li {
     zoom: 1;
 }
+
+#content fieldset label {
+    width: 110px;
+}
