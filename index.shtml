@@ -83,7 +83,7 @@
                                     <label for="radio-choice-2"><input type="radio" name="radios" id="radio-choice-2" value="choice-2" />Choice 2</label>
                                 </fieldset>
                             </fieldset>
-                            <fieldset>
+                            <fieldset class="nolegend">
                                 <label for="select-choice">Select Choice:</label>
                                 <select name="select-choice" id="select-choice">
                                     <option value="Choice 1">Choice 1</option>
@@ -191,7 +191,7 @@
                                     <td>2</td>
                                     <td>3</td>
                                     <td>4</td>
-                                </tr>                                
+                                </tr>
                             </tbody>
                         </table>
                         <dl>

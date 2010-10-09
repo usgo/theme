@@ -116,7 +116,7 @@ tr:hover td {
     width: 370px;
     min-width: 370px;
     max-width: 370px;
-    background: #b3b38f;    
+    background: #b3b38f;
     border: 2px solid black;
 }
 
@@ -137,7 +137,7 @@ tr:hover td {
     border: 2px solid black;
     font-size: 1.1em;
     padding: 4px;
-    background: #d3d3af;    
+    background: #d3d3af;
 }
 
 #content label {
@@ -317,7 +317,7 @@ a:hover {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    font-family:verdana, arial, helvetica, sans-serif;    
+    font-family:verdana, arial, helvetica, sans-serif;
 }
 
 .navbar a:hover {
@@ -429,7 +429,7 @@ a:hover {
 }
 
 #news a:hover {
-    background: #b3b38f;    
+    background: #b3b38f;
 }
 
 #news a:hover span {
