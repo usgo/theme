@@ -76,11 +76,11 @@
                             <fieldset>
                                 <legend>A Fieldset</legend>
                                 <label for="name">Text Input:</label>
-                                <input type="text" name="name" id="name" value="" tabindex="1" />
+                                <input type="text" name="name" id="name" value="" />
                                 <fieldset>
                                     <legend>Some radiobuttons</legend>
-                                    <label for="radio-choice-1"><input type="radio" name="radios" id="radio-choice-1" tabindex="2" value="choice-1" />Choice 1</label>
-                                    <label for="radio-choice-2"><input type="radio" name="radios" id="radio-choice-2" tabindex="3" value="choice-2" />Choice 2</label>
+                                    <label for="radio-choice-1"><input type="radio" name="radios" id="radio-choice-1" value="choice-1" />Choice 1</label>
+                                    <label for="radio-choice-2"><input type="radio" name="radios" id="radio-choice-2" value="choice-2" />Choice 2</label>
                                 </fieldset>
                             </fieldset>
                             <fieldset>
@@ -105,18 +105,18 @@
                         <form action="#" method="post">
                             <fieldset>
                                 <legend>Personal Information</legend>
-                                <label for="firstname" accesskey="f">First name: </label>
-                                <input type="text" id="firstname" name="firstname" tabindex="1" value="" title="first name" />
-                                <label for="lastname" accesskey="l">Last name: </label>
-                                <input type="text" id="lastname" name="lastname" tabindex="2" title="last name" />
-                                <label for="email" class="required" accesskey="e">Email: </label>
-                                <input type="text" id="email" name="email" tabindex="3" title="email" />
+                                <label for="firstname">First name: </label>
+                                <input type="text" id="firstname" name="firstname" value="" title="first name" />
+                                <label for="lastname">Last name: </label>
+                                <input type="text" id="lastname" name="lastname" title="last name" />
+                                <label for="email">Email: </label>
+                                <input type="text" id="email" name="email" title="email" />
                                 <small>I am some sort of note that will help you fill out this form.</small>
                             </fieldset>
                             <fieldset>
                                 <legend>Comments</legend>
-                                <label for="comments" accesskey="c">Comments: </label>
-                                <textarea name="comments" rows="3" cols="23" id="comments" tabindex="4" title="comments"></textarea>
+                                <label for="comments">Comments: </label>
+                                <textarea name="comments" rows="3" cols="23" id="comments" title="comments"></textarea>
                                 <button name="submit" type="submit" value="Submit">Submit</button>
                                 <button name="reset" type="reset" value="Reset">Reset</button>
                             </fieldset>
