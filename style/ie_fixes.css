@@ -1,0 +1,15 @@
+#content fieldset {
+    position: relative;
+    padding-top: 1.75em;
+    margin-top: 1em;
+}
+
+#content legend {
+    position: absolute;
+    top: -.5em;
+    left: 1em;
+}
+
+#content fieldset fieldset legend {
+    left: .5em;
+}
