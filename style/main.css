@@ -372,7 +372,7 @@ a:hover {
     padding-left: 20px;
     background: white url('../images/search.png') no-repeat 2px center;
     color: black;
-    border: 2px solid black;
+    border: 1px solid black;
 }
 
 #navcol .searchbox {
