@@ -147,6 +147,7 @@ tr:hover td {
     text-align: right;
     margin-top: 4px;
     margin-bottom: 4px;
+    clear: left;
 }
 
 #content input,
@@ -178,6 +179,7 @@ tr:hover td {
     display: block;
     float: left;
     width: auto;
+    clear: none;
 }
 
 #content fieldset fieldset input {
