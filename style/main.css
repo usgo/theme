@@ -204,13 +204,12 @@ tr:hover td {
 body {
     color: #000;
     background: #aa4900 url('../images/gradient_bg.png') repeat-y left top;
-    font-family: verdana, arial, helvetica, sans-serif;
+    font-family: Helvetica, Arial, Verdana, sans-serif;
     font-size: 12px;
     min-width: 760px;
 }
 
 #content {
-    font-family: georgia, serif;
     font-size: 14px;
 }
 
@@ -221,7 +220,6 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin-top: .5em;
     margin-bottom:.5em;
-    font-family: verdana, arial, helvetica, sans-serif;
 }
 
 h1 { font-size: 2em; }
@@ -319,7 +317,6 @@ a:hover {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    font-family:verdana, arial, helvetica, sans-serif;
 }
 
 .navbar a:hover {
