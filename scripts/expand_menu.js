@@ -5,7 +5,6 @@
  *
  */
 
-
 /* get a fingerprint of information about .mainnavs
  *
  * this is important for the next function, where we need to
@@ -78,10 +77,10 @@ function init_expanding_menu() {
         var temp = $.cookies.get('saved_menu');
         
         /* convert from compact array to expanded one */
-        window.menu_status = new Object();
+        window.menu_status = {};
         window.menu_status.version = temp.version;
         window.menu_status.fp = temp.fp;
-        window.menu_status.shown = new Array();
+        window.menu_status.shown = [];
         for (var i = 0; i < window.cached_showhide.length; ++i) {
             window.menu_status.shown[i] = false;
         }
@@ -116,10 +115,10 @@ function init_expanding_menu() {
             }
         }
     } else {
-        window.menu_status = new Object();
+        window.menu_status = {};
         window.menu_status.version = menu_version;
         window.menu_status.fp = fp;
-        window.menu_status.shown = new Array();
+        window.menu_status.shown = [];
         
         for (var i = 0; i < window.cached_showhide.length; ++i)
         {
@@ -135,10 +134,10 @@ function init_expanding_menu() {
                 /* convert to slightly more compact format
                  * don't want cookies thing to be huge
                  */
-                var to_write = new Object();
+                var to_write = {};
                 to_write.version = window.menu_status.version;
                 to_write.fp = window.menu_status.fp;
-                to_write.shown = new Array();
+                to_write.shown = [];
                 for (var j = 0; j < window.menu_status.shown.length; ++j) {
                     if (window.menu_status.shown[j]) {
                         to_write.shown.push(j);
