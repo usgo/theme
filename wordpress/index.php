@@ -8,6 +8,7 @@
         </style>
         <?php include(get_template_directory() . "/includes/head.html"); ?>
         <link rel="stylesheet" type="text/css" href="/theme/style/right_col.css" />
+        <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> &raquo; Feed" href="<?php bloginfo('rss2_url'); ?>" />
 	    <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
