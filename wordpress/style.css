@@ -1,0 +1,75 @@
+/*
+Theme Name: Kabocha
+Theme URI: http://www.emptypath.com/
+Description: A theme created for the American Go Association.
+Version: 1.0
+Author: Joshua Simmons
+Tags: variable width, three columns, widgets
+
+Icons from the Iconic and Sanscons sets, available at http://somerandomdude.com/ under a Creative Commons license.
+*/
+
+/* style/main.css (and others) contain general styles
+ *
+ * anything wordpress-specific goes in here
+ */
+
+.wp_nav {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.date {
+    color: gray;
+}
+
+.post {
+    margin-bottom: 6.5em;
+}
+
+.post .date {
+    padding-left: 1em;
+}
+
+.post em {
+    color: gray;
+    display: block;
+    margin-top: .25em;
+}
+
+.meta {
+    clear: both;
+    display: block;
+    margin: 0 auto;
+    padding: 6px 20px;
+    width: 100%;
+    margin-left: -20px;
+}
+
+.meta div {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.meta .categories,
+.meta .tags {
+    float: left;
+    clear: left;
+    width: 70%;
+}
+
+.meta .feedback,
+.meta .edit {
+    float: right;
+    clear: right;
+}
+
+#extracol .mainnav {
+    padding: 5px;
+    padding-top: 15px;
+    font-size: 1.3em;
+}
+
+#extracol .mainnav ul {
+    padding-left: .5em;
+}
