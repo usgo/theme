@@ -472,6 +472,7 @@ a:hover {
 #ads {
     text-align: center;
     float: left;
+    margin: 0;
 }
 
 #ads h2 {
@@ -484,6 +485,7 @@ a:hover {
     float: left;
     text-align: left;
     list-style-type: none;
+    margin: 0 5px;
 }
 
 #sitelinks {
@@ -491,6 +493,7 @@ a:hover {
     list-style-type: none;
     font-size: 1.25em;
     text-align: right;
+    margin-right: 5px;
 }
 
 #sitelinks li {
