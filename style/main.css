@@ -103,6 +103,10 @@ tr:hover td {
     color: white;
 }
 
+#content {
+    min-height: 600px;
+}
+
 #content form, 
 #content table, 
 #content ol, 
