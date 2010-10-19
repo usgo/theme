@@ -5,17 +5,17 @@
  *
  */
 
-/* get a fingerprint of information about .mainnavs
+/* get a fingerprint of information about .expandings
  *
  * this is important for the next function, where we need to
  * discard the cookie info if something has changed
  */
 function fingerprint() {
-    var temp = $('.mainnav');
+    var temp = $('.expanding');
     var res = temp.length * 255;
     
     /* just do various things to capture a little bit of info from
-     * every .mainnav that exists
+     * every .expanding that exists
      */
     temp.each(function(i) {
             var str = $(this).attr('class') + $(this).attr('id');
@@ -34,7 +34,7 @@ function fingerprint() {
 }
 
 /* reads from cookie the list of open .hidable elements that are sub
- * a .mainnav
+ * a .expanding
  *
  * this is used to keep state of the menus between pages.
  */
@@ -57,7 +57,7 @@ function init_expanding_menu() {
     
 
     // set hidable for matching uls, and shower for matching a's
-    $('.mainnav .opener + ul')
+    $('.expanding .opener + ul')
         .addClass("hidable")
         .prev().addClass("shower")
                 .click(function() { $(this).toggleClass("shower");
@@ -70,7 +70,7 @@ function init_expanding_menu() {
     // stores the status that will also be put into a cookie (in JSON)
     window.menu_status = null;
 
-    window.cached_showhide = $('.mainnav .shower + .hidable').prev();
+    window.cached_showhide = $('.expanding .shower + .hidable').prev();
     var fp = fingerprint();
 
     try {
@@ -156,7 +156,7 @@ function init_expanding_menu() {
                         function() { $(this).next().slideDown("fast"); });
 
     // hide what should be hiden
-    $('.mainnav .shower + .hidable').hide();
+    $('.expanding .shower + .hidable').hide();
 
     return true;
 }

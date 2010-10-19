@@ -1,7 +1,7 @@
 $(document).ready(function() {
     if (init_expanding_menu()) {
-        $('.mainnav').removeClass('flyout')
-                     .addClass('expand');
+        $('.expanding').removeClass('flyout')
+                       .addClass('expand');
         /* ie7fix only needed for flyout, so removeClass if javascript works */
         $('.ie7fix').removeClass('ie7fix');
     }
