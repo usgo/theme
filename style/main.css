@@ -330,6 +330,7 @@ a:hover {
 .mainnav {
     font-size: 1.4em;
     margin: 0;
+    font-family: Helvetica, Verdana, Arial, sans-serif;
 }
 
 .mainnav li {
