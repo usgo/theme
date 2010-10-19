@@ -4,7 +4,7 @@
 		if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
 	<?php wp_list_pages('title_li=' . __('Pages:')); ?>
 	<?php wp_list_bookmarks('title_after=&title_before='); ?>
-    <?php wp_list_categories('title_li=' . __('Categories:')); ?>
+    <?php wp_list_categories('show_option_all=All&exclude=1182&title_li=' . __('Categories:')); ?>
 </ul>
 <form class="search" id="newssearch" method="get" action="<?php bloginfo('home'); ?>">
     <fieldset>
