@@ -209,6 +209,10 @@ body {
     min-width: 760px;
 }
 
+html {
+    background: white;
+}
+
 #content {
     font-size: 14px;
 }
@@ -449,13 +453,69 @@ a:hover {
     padding: 5px;
     color: white;
     border: 1px solid black;
-
     background: black;
 }
 
 #footer p {
     margin: 0;
     padding: 0;
+}
+
+#postfooter {
+    background: #555;
+    border: 1px solid black;
+    padding: 10px;
+    color: #ddd;
+    min-height: 135px;
+}
+
+#ads {
+    text-align: center;
+    float: left;
+}
+
+#ads h2 {
+    font-size: 1.3em;
+    margin: 0;
+    margin-bottom: 6px;
+}
+
+#ads ul {
+    float: left;
+    text-align: left;
+    list-style-type: none;
+}
+
+#sitelinks {
+    float: right;
+    list-style-type: none;
+    font-size: 1.25em;
+    text-align: right;
+}
+
+#sitelinks li {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+#postfooter a,
+#postfooter a:link,
+#postfooter a:visited,
+#postfooter a:hover {
+    color: #ccc;
+    text-decoration: none;
+}
+
+#postfooter a:hover {
+    text-decoration: underline;
+}
+
+#sitelinks a,
+#sitelinks a:link,
+#sitelinks a:visited,
+#sitelinks a:hover {
+    color: #ddd;
 }
 
 fieldset { border: 0; margin: 0; padding: 0; }

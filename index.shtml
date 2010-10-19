@@ -31,6 +31,9 @@
         <div id="footer">
             <!--#include virtual="/theme/includes/footer.html" -->
         </div>
+        <div id="postfooter" class="containfloats">
+            <!--#include virtual="/theme/includes/postfooter.html" -->
+        </div>
     </body>
 </html>
 <!--
