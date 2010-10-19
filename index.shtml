@@ -1,35 +1,35 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <!--#include file="includes/meta.html" -->
+        <!--#include virtual="/theme/includes/meta.html" -->
         <title>Welcome to the American Go Association</title>
-        <!--#include file="includes/head.html" -->
-        <link rel="stylesheet" type="text/css" href="style/right_col.css" />
+        <!--#include virtual="/theme/includes/head.html" -->
+        <link rel="stylesheet" type="text/css" href="/theme/style/right_col.css" />
     </head>
     <body>
         <div id="header">
-            <!--#include file="includes/header.html" -->
+            <!--#include virtual="/theme/includes/header.html" -->
             <div id="navwrap">
-                <!--#include file="includes/navbar.html" -->
+                <!--#include virtual="/theme/includes/navbar.html" -->
             </div>
         </div>
         <div id="container">
             <div id="fauxcolbgR" class="containfloats">
                 <div id="contentwrapper">
                     <div id="content">
-                        <!--#include file="includes/content.dummy.html" -->
+                        <!--#include virtual="/theme/includes/content.dummy.html" -->
                     </div>
                 </div>
                 <div id="navcol" class="ie7fix">
-                    <!--#include file="includes/navcol.html" -->
+                    <!--#include virtual="/theme/includes/navcol.html" -->
                 </div>
                 <div id="extracol">
-                    <!--#include file="includes/extracol.html" -->
+                    <!--#include virtual="/theme/includes/extracol.html" -->
                 </div>
             </div>
         </div>
         <div id="footer">
-            <!--#include file="includes/footer.html" -->
+            <!--#include virtual="/theme/includes/footer.html" -->
         </div>
     </body>
 </html>
