@@ -2,7 +2,7 @@
 
 <div <?php post_class('containfloats') ?> id="post-<?php the_ID(); ?>">
 	 <h2 class="storytitle"><?php the_title(); ?></h2>
-     <p class="date"><?php the_time('- l F j'); ?></p>
+     <p class="date"><?php the_time('l F j'); ?></p>
 	<div class="storycontent">
 		<?php the_content(__('Continue reading...)')); ?>
 	</div>

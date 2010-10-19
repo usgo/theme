@@ -21,21 +21,12 @@ Icons from the Iconic and Sanscons sets, available at http://somerandomdude.com/
 }
 
 .post .date {
-    color: gray;
+    color: #666;
+    padding-left: 1em;
 }
 
 .post {
     margin-bottom: 6.5em;
-}
-
-.post .date {
-    padding-left: 1em;
-}
-
-.post em {
-    color: gray;
-    display: block;
-    margin-top: .25em;
 }
 
 .meta {
