@@ -386,10 +386,22 @@ a:hover {
     display: block;
 }
 
-#navcol .searchbutton {
+.searchbutton {
     display: block;
     margin: 2px auto;
     width: 5em;
+}
+
+#extracol .search {
+    width: 146px;
+    margin: 0 auto;
+    display: block;
+}
+
+#extracol .searchbox {
+    width: 126px;
+    margin: 0 auto;
+    display: block;
 }
 
 #extracol #newsHL {
