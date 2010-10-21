@@ -14,10 +14,15 @@ Icons from the Iconic and Sanscons sets, available at http://somerandomdude.com/
  * anything wordpress-specific goes in here
  */
 
-.wp_nav {
+.wp_nav,
+#morenewsnav {
     display: block;
     margin: 0 auto;
     text-align: center;
+}
+
+#morenewsnav {
+    font-size: 1.2em;
 }
 
 .post .date {

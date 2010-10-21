@@ -22,12 +22,21 @@
             <div id="fauxcolbgR" class="containfloats">
                 <div id="contentwrapper">
                     <div id="content">
-<?php 
-                        if ($is_front) {
-                            include(path_to_theme() . "/includes/drupal.frontpage.html");
-                        }
+<?php if ($is_front) {
+                        print "<h1>Welcome to the American Go Association</h1>";
+                        include(path_to_theme() . "/includes/drupal.frontpage.html");
 ?>
-                        <?php print $content; ?>
+                        <div id="morenewsnav">
+                            <a href="/news/">More Go News</a>
+                        </div>
+<?php
+}
+else
+{
+                        print "<h1>$title</h1>\n";
+                        print $content;
+}
+?>
                     </div>
                 </div>
                 <div id="navcol" class="ie7fix">
