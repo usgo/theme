@@ -22,7 +22,10 @@
             <div id="fauxcolbgR" class="containfloats">
                 <div id="contentwrapper">
                     <div id="content">
-                        <?php include(get_template_directory() . "/includes/content.wordpress.php"); ?>
+                        <h1><?php bloginfo('name'); ?><?php wp_title(' &raquo; ', true, 'left'); ?></h1>
+                        <?php global $query_string;
+                        query_posts($query_string . "&cat=-1182");
+                        include(get_template_directory() . "/includes/content.wordpress.php"); ?>
                     </div>
                 </div>
                 <div id="navcol" class="ie7fix">

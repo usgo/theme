@@ -1,8 +1,4 @@
-<h1><?php bloginfo('name'); ?><?php wp_title(' &raquo; ', true, 'left'); ?></h1>
-<?php
-global $query_string;
-query_posts($query_string . "&cat=-1182");
-if (have_posts()) : while (have_posts()) : the_post(); ?>
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 <div <?php post_class('containfloats') ?> id="post-<?php the_ID(); ?>">
 	 <h2 class="storytitle"><?php the_title(); ?></h2>
      <p class="date"><?php the_time('l F j'); ?></p>
