@@ -1,6 +1,6 @@
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 <div <?php post_class('containfloats') ?> id="post-<?php the_ID(); ?>">
-	 <h2 class="storytitle"><?php the_title(); ?></h2>
+     <h2 class="storytitle"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
      <p class="date"><?php the_time('l F j'); ?></p>
 	<div class="storycontent">
 		<?php the_content(__('Continue reading...)')); ?>
