@@ -56,7 +56,7 @@ else
                     <?php print $sidebar_first; ?>
                 </div>
 <?php if (!empty($sidebar_second)) {
-                print "<div id=\"extracol\">$sidebar_second;</div>";
+                print "<div id=\"extracol\">$sidebar_second</div>";
 } ?>
             </div>
         </div>
