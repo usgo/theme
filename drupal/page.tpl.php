@@ -11,7 +11,7 @@ if (!empty($sidebar_second)) {
     print '<link rel="stylesheet" type="text/css" href="/theme/style/right_col.css" />';
 }
 if ($is_front) {
-    print '<link rel="stylesheet" type="text/css" href="/theme/wordpress/style.css" />';
+    include(path_to_theme() . "/includes/drupal.wphead.html");
 } ?>
     </head>
     <body class="<?php print $body_classes; ?>">
