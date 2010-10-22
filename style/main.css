@@ -247,6 +247,19 @@ a:hover {
     text-decoration: none;
 }
 
+h1 a, h1 a:link, h1 a:visited,
+h2 a, h2 a:link, h2 a:visited,
+h3 a, h3 a:link, h3 a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+h1 a:hover,
+h2 a:hover,
+h3 a:hover {
+    text-decoration: underline;
+}
+
 #header {
     height: 130px;
     background: transparent url("../images/goban_bg.png") no-repeat;
