@@ -1,0 +1,61 @@
+<?php
+/**
+ * @file
+ * This is a simple module that print out "Hello World"
+ */
+
+/**
+ * Implementation of hook_help().
+ */
+function wpnewscol_help($path, $arg) {
+  switch ($path) {
+    case 'wpnewscol':
+      return '<p>'. t('A simple module to include the cached file containing Wordpress news in a sidebar.') .'</p>';
+  }
+}
+
+/**
+ * Implementation of hook_perm().
+ */
+function wpnewscol_perm() {
+  return array('access wpnewscol');
+}
+
+/**
+ * Implementation of hook_menu().
+ */
+function wpnewscol_menu() {
+  $items = array();
+
+  $items['wpnewscol'] = array(
+    'title' => 'Wordpress News Column',
+    'description' => 'A short list of the most recent news from Wordpress.',
+    'page callback' => 'wpnewscol_all',
+    'access arguments' => array('access wpnewscol'),
+    'type' => MENU_NORMAL_ITEM
+  );
+  return $items;
+}
+
+/**
+ * Creating the page where we will print "Hello World"
+ */
+function wpnewscol_all() {
+  return t("Hello, World!");
+}
+
+/**
+ * Implementation of hook_block().
+ */
+function wpnewscol_block($op = 'list', $delta = 0, $edit = array()) {
+  if ($op == "list") {
+    $block = array();
+    $block[0]["info"] = t('Wordpress Latest News Sidebar');
+    return $block;
+  }
+  elseif ($op == 'view') {
+    $block['subject'] = 'Latest News';
+    $block['content'] = file_get_contents('/var/www/theme/includes/extracol.html');
+    return $block;
+  }
+}

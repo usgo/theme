@@ -43,7 +43,6 @@ else
                     <?php print $sidebar_first; ?>
                 </div>
                 <div id="extracol">
-                    <?php include(path_to_theme() . "/includes/newsbar.php"); ?>
                     <?php print $sidebar_second; ?>
                 </div>
             </div>
