@@ -25,10 +25,6 @@ Icons from the Iconic and Sanscons sets, available at http://somerandomdude.com/
     font-size: 1.2em;
 }
 
-body.front .post .meta {
-    display: none !important;
-}
-
 .post .date {
     color: #666;
     padding-left: 1em;
