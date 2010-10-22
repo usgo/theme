@@ -1,8 +1,8 @@
 from BeautifulSoup import BeautifulSoup as BS
 import urllib
 
-url = "http://192.168.1.142/drupal/node/26"
-write_dir = '.'
+url = "http://www.usgo.org/dp/node/112"
+write_dir = '/var/www/sites/usgo.org/theme/includes'
 page = urllib.urlopen(url).read()
 
 div_ids = ['navwrap', 'navcol', 'extracol', 'postfooter']
