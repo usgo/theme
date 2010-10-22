@@ -25,9 +25,19 @@ if ($is_front) {
             <div id="fauxcolbgR" class="containfloats">
                 <div id="contentwrapper">
                     <div id="content">
-<?php if ($is_front) {
-                        print "<h1>Welcome to the American Go Association</h1>";
-                        include(path_to_theme() . "/includes/drupal.frontpage.html");
+<?php
+if (!empty($tabs)) {
+    print "<div class=\"tabs\">$tabs</div>";
+}
+if ($show_messages && !empty($messages)) {
+    print $messages;
+}
+if (!empty($help)) {
+    print "<div id=\"help\">$help</div>";
+}
+if ($is_front) {
+    print "<h1>Welcome to the American Go Association</h1>";
+    include(path_to_theme() . "/includes/drupal.frontpage.html");
 ?>
                         <div id="morenewsnav">
                             <a href="/wordpress/">More Go News</a>
@@ -36,8 +46,8 @@ if ($is_front) {
 }
 else
 {
-                        print "<h1>$title</h1>\n";
-                        print $content;
+    print "<h1>$title</h1>\n";
+    print $content;
 }
 ?>
                     </div>
