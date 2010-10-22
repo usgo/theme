@@ -6,8 +6,11 @@
         <?php print $styles; ?>
         <?php print $scripts; ?>
         <?php include(path_to_theme() . "/includes/head.html"); ?>
-        <link rel="stylesheet" type="text/css" href="/theme/style/right_col.css" />
-<?php if ($is_front) {
+<?php
+if (!empty($sidebar_second)) {
+    print '<link rel="stylesheet" type="text/css" href="/theme/style/right_col.css" />';
+}
+if ($is_front) {
     print '<link rel="stylesheet" type="text/css" href="/theme/wordpress/style.css" />';
 } ?>
     </head>
@@ -42,9 +45,9 @@ else
                 <div id="navcol" class="ie7fix">
                     <?php print $sidebar_first; ?>
                 </div>
-                <div id="extracol">
-                    <?php print $sidebar_second; ?>
-                </div>
+<?php if (!empty($sidebar_second)) {
+                print "<div id=\"extracol\">$sidebar_second;</div>";
+} ?>
             </div>
         </div>
         <div id="footer">
