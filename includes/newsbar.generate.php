@@ -1,5 +1,5 @@
-<?php require('/var/www/wordpress/wp-blog-header.php');
-query_posts('cat=712,-1182&showposts=5');
+<?php require('/var/www/sites/usgo.org/news/wp-blog-header.php');
+query_posts('cat=712,-1182,-542&showposts=5');
 if (!have_posts())
 {
     query_posts('cat=-1182&showposts=5');
@@ -11,7 +11,7 @@ if (have_posts()) :
 <?php while (have_posts()) : the_post(); ?>
 <li><a href="<?php the_permalink(); ?>"><?php the_title('<span>', '</span>');
 if (function_exists('the_advanced_excerpt')) {
-    the_advanced_excerpt('length=64&use_words=0&no_custom=0&ellipsis=%26hellip;&allowed_tags=strong,em');
+    the_advanced_excerpt('length=25&use_words=1&no_custom=1&ellipsis=%26hellip;&allowed_tags=strong,em');
 }
 else
 {

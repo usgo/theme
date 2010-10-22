@@ -1,4 +1,4 @@
-<?php require('/var/www/wordpress/wp-blog-header.php');
+<?php require('/var/www/sites/usgo.org/news/wp-blog-header.php');
 query_posts('cat=712,-1182&showposts=5');
 if (!have_posts())
 {
