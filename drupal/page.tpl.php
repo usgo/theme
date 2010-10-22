@@ -40,7 +40,7 @@ if ($is_front) {
     include(path_to_theme() . "/includes/drupal.frontpage.html");
 ?>
                         <div id="morenewsnav">
-                            <a href="/wordpress/">More Go News</a>
+                            <a href="/news/?preview_theme=kabocha">More Go News</a>
                         </div>
 <?php
 }

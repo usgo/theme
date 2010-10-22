@@ -19,7 +19,7 @@ else
 } ?>
 </a></li>
 <?php endwhile; ?>
-    <li><a href="/wordpress/"><span>More News&hellip;</span></a></li>
-    <li><a href="/wordpress/?feed=rss2"><span class="rss"><abbr title="Really Simple Syndication">RSS</abbr> Feed</span></a></li>
+    <li><a href="/news/?preview_theme=kabocha"><span>More News&hellip;</span></a></li>
+    <li><a href="/news/feed/"><span class="rss"><abbr title="Really Simple Syndication">RSS</abbr> Feed</span></a></li>
 </ul>
 <?php endif; ?>
