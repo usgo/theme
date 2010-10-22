@@ -65,6 +65,10 @@ body.front .post .meta {
     clear: right;
 }
 
+.sharesave tr:hover td {
+    background: inherit !important;
+}
+
 #extracol .mainnav {
     padding: 5px;
     padding-top: 15px;
