@@ -26,6 +26,9 @@
                         <?php global $query_string;
                         query_posts($query_string . "&cat=-1182");
                         include(get_template_directory() . "/includes/content.wordpress.php"); ?>
+                        <div class="wp_nav">
+                            <?php posts_nav_link(' &#8212; ', __('&laquo; Newer Posts'), __('Older Posts &raquo;')); ?>
+                        </div>
                     </div>
                 </div>
                 <div id="navcol" class="ie7fix">
