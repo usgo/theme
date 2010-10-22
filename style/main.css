@@ -408,8 +408,18 @@ a:hover {
     display: block;
 }
 
+#bbls,
+#bbls a,
+#bbls img {
+    display: block;
+    margin: 0 auto;
+}
+
 #extracol #newsHL {
     border-bottom: 1px solid green;
+}
+
+#extracol h2 {
     margin: 0px;
     margin-top: 10px;
     padding: 10px;
