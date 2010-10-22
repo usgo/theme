@@ -27,7 +27,7 @@
                         include(path_to_theme() . "/includes/drupal.frontpage.html");
 ?>
                         <div id="morenewsnav">
-                            <a href="/news/">More Go News</a>
+                            <a href="/wordpress/">More Go News</a>
                         </div>
 <?php
 }
@@ -43,7 +43,7 @@ else
                     <?php print $sidebar_first; ?>
                 </div>
                 <div id="extracol">
-                    <?php include(path_to_theme() . "/includes/extracol.html"); ?>
+                    <?php include(path_to_theme() . "/includes/newsbar.php"); ?>
                     <?php print $sidebar_second; ?>
                 </div>
             </div>
