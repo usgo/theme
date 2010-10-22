@@ -26,7 +26,7 @@ function wpnewscol_block($op = 'list', $delta = 0, $edit = array()) {
   }
   elseif ($op == 'view') {
     $block['subject'] = 'Latest News';
-    $block['content'] = file_get_contents('/var/www/theme/includes/extracol.html');
+    $block['content'] = file_get_contents('/var/www/sites/usgo.org/theme/includes/extracol.html');
     return $block;
   }
 }
