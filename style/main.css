@@ -438,7 +438,9 @@ a:hover {
     border-bottom: 1px solid green;
 }
 
-#news a {
+#news a,
+#news a:link,
+#news a:visited {
     text-decoration: none;
     color: #000;
     display: block;
@@ -450,12 +452,6 @@ a:hover {
     background-image: url('../images/rss.png');
     background-repeat: no-repeat;
     background-position: 10px center;
-}
-
-#news a:link,
-#news a:visited {
-    color: #000;
-    text-decoration: none;
 }
 
 #news a:hover {
