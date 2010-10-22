@@ -58,6 +58,7 @@ body.front .post .meta {
     width: 70%;
 }
 
+.meta .sharesave,
 .meta .feedback,
 .meta .edit {
     float: right;

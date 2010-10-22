@@ -9,11 +9,18 @@
         <div class="categories">
             <?php _e("Categories:"); ?> <?php the_category(',') ?>
         </div>
-        <div class="edit">
-            <?php edit_post_link(__('Edit This Post')); ?>
-        </div>
+        <?php if (!in_category('members-only') && function_exists('ADDTOANY_SHARE_SAVE_KIT')) { 
+            /* No share button for "Member's Only" posts */
+            echo '<div class="sharesave">';
+            ADDTOANY_SHARE_SAVE_KIT();
+            echo '</div>';
+          } ?>
+
         <div class="tags">
             <?php the_tags(__('Tags: '), ', ', ''); ?>
+        </div>
+        <div class="edit">
+            <?php edit_post_link(__('Edit This Post')); ?>
         </div>
     </div>
 </div>
