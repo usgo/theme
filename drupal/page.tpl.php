@@ -36,7 +36,7 @@ if (!empty($help)) {
     print "<div id=\"help\">$help</div>";
 }
 if ($is_front) {
-    print "<h1>Welcome to the American Go Association</h1>";
+    print "<h1 id=\"pagetitle\">Welcome to the American Go Association</h1>";
     include(path_to_theme() . "/includes/drupal.frontpage.html");
 ?>
                         <div id="morenewsnav">
@@ -46,7 +46,7 @@ if ($is_front) {
 }
 else
 {
-    print "<h1>$title</h1>\n";
+    print "<h1 id=\"pagetitle\">$title</h1>\n";
     print $content;
 }
 ?>
