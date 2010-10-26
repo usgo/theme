@@ -1,0 +1,31 @@
+<?php
+/**
+ * @file
+ * This is a simple module that includes the problem of the week in a sidebar.
+ */
+
+/**
+ * Implementation of hook_help().
+ */
+function potw_help($path, $arg) {
+  switch ($path) {
+    case 'potw':
+      return '<p>'. t('A simple module to include the problem of the week in a sidebar.') .'</p>';
+  }
+}
+
+/**
+ * Implementation of hook_block().
+ */
+function potw_block($op = 'list', $delta = 0, $edit = array()) {
+  if ($op == "list") {
+    $block = array();
+    $block[0]["info"] = t('Problem of the Week Sidebar');
+    return $block;
+  }
+  elseif ($op == 'view') {
+    $block['subject'] = 'Problem of the Week';
+    $block['content'] = file_get_contents('/var/www/sites/usgo.org/problems/current_go_problem.inc');
+    return $block;
+  }
+}
