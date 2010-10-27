@@ -29,8 +29,7 @@ function imagealign_filter($op, $delta = 0, $format = -1, $text = '') {
   // many filters it defines and a human-readable name for each filter. Note that
   // the returned name should be passed through t() for translation.
   if ($op == 'list') {
-    return array(
-      0 => t('Floats to CSS classes'),
+    return array(0 => t('Floats to CSS classes'));
   }
 
   switch ($delta) {
@@ -48,4 +47,5 @@ function imagealign_filter($op, $delta = 0, $format = -1, $text = '') {
       }
       break;
   }
+}
 ?>
