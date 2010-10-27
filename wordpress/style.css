@@ -38,6 +38,10 @@ Icons from the Iconic and Sanscons sets, available at http://somerandomdude.com/
     margin-bottom: 2em;
 }
 
+.post p {
+    text-align: justify;
+}
+
 .meta {
     clear: both;
     display: block;
