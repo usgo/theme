@@ -30,6 +30,10 @@ Icons from the Iconic and Sanscons sets, available at http://somerandomdude.com/
     padding-left: 1em;
 }
 
+#content .post .date {
+    margin-top: -.75em;
+}
+
 .post {
     margin-bottom: 2em;
 }
