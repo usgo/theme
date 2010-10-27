@@ -42,7 +42,7 @@ function imagealign_filter($op, $delta = 0, $format = -1, $text = '') {
           return $text;
 
         case 'process':
-          return preg_replace('/style\s*=\s*"float:\s*(left|right);?"/i',
+          return preg_replace('/style\s*=\s*"[^"><]*?float:\s*(left|right);?[^"><]*"/i',
                               'class="align$1"', $text);
       }
       break;
