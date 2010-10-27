@@ -1,0 +1,4 @@
+; $Id$
+name = Floats to CSS classes
+description = A simple filter for WYSIWYG output that translates float:right and float:left into the CSS classes I'd prefer
+core = 6.x
