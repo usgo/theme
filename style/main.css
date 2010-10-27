@@ -45,21 +45,21 @@ img {
 
 img.aligncenter {
 	display: block;
-    margin: 5px;
+    margin: 10px !important;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 img.alignleft {
 	float: left;
-    margin: 5px;
-    margin-left: 0;
+    margin: 10px !important;
+    margin-left: 0 !important;
 }
 
 img.alignright {
 	float: right;
-    margin: 5px;
-    margin-right: 0;
+    margin: 10px !important;
+    margin-right: 0 !important;
 }
 
 table {
