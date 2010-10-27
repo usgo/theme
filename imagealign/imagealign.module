@@ -9,7 +9,7 @@
  * Implementation of hook_filter_tips().
  *
  */
-function filter_example_filter_tips($delta, $format, $long = FALSE) {
+function imagealign_filter_tips($delta, $format, $long = FALSE) {
   switch ($delta) {
     case 0:
       if ($long) {
@@ -24,7 +24,7 @@ function filter_example_filter_tips($delta, $format, $long = FALSE) {
  *
  * The bulk of filtering work is done here.
  */
-function filter_example_filter($op, $delta = 0, $format = -1, $text = '') {
+function imagealign_filter($op, $delta = 0, $format = -1, $text = '') {
   // The "list" operation provides the module an opportunity to declare both how
   // many filters it defines and a human-readable name for each filter. Note that
   // the returned name should be passed through t() for translation.
