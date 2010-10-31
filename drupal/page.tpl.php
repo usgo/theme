@@ -4,8 +4,8 @@
         <?php include(path_to_theme() . "/includes/meta.html"); ?>
         <title><?php print $head_title ?></title>
         <?php print $styles; ?>
-        <?php print $scripts; ?>
         <?php include(path_to_theme() . "/includes/head.html"); ?>
+        <?php print $scripts; ?>
 <?php
 if (!empty($sidebar_second)) {
     print '<link rel="stylesheet" type="text/css" href="/theme/style/right_col.css" />';
