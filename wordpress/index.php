@@ -32,7 +32,13 @@ if (!is_singular()) {
                         query_posts($query_string . "&cat=-1182");
                         include(get_template_directory() . "/includes/content.wordpress.php"); ?>
                         <div class="wp_nav">
-                            <?php posts_nav_link(' &#8212; ', __('&laquo; Newer Posts'), __('Older Posts &raquo;')); ?>
+<?php
+if (function_exists('wp_pagenavi')) {
+    wp_pagenavi();
+} else {
+    posts_nav_link(' &#8212; ', __('&laquo; Newer Posts'), __('Older Posts &raquo;'));
+}
+?>
                         </div>
                     </div>
                 </div>
