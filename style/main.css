@@ -43,6 +43,10 @@ img {
     border: 2px solid black;
 }
 
+img.graphic {
+    border: none;
+}
+
 img.aligncenter {
 	display: block;
     margin: 10px !important;
