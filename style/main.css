@@ -237,7 +237,6 @@ h4 { font-size: 1.15em; }
 h5 { font-size: 1.0em; }
 h6 { font-size: 0.8em; }
 
-a,
 a:link,
 a:visited {
     color: #654c19;
@@ -247,9 +246,9 @@ a:hover {
     text-decoration: none;
 }
 
-h1 a, h1 a:link, h1 a:visited,
-h2 a, h2 a:link, h2 a:visited,
-h3 a, h3 a:link, h3 a:visited {
+h1 a:link, h1 a:visited,
+h2 a:link, h2 a:visited,
+h3 a:link, h3 a:visited {
     color: black;
     text-decoration: none;
 }
@@ -257,6 +256,7 @@ h3 a, h3 a:link, h3 a:visited {
 h1 a:hover,
 h2 a:hover,
 h3 a:hover {
+    color: black;
     text-decoration: underline;
 }
 
@@ -337,7 +337,6 @@ h3 a:hover {
     border-left: 0;
 }
 
-.navbar a,
 .navbar a:link,
 .navbar a:visited {
     text-decoration: none;
@@ -456,7 +455,6 @@ h3 a:hover {
     border-bottom: 1px solid green;
 }
 
-#news a,
 #news a:link,
 #news a:visited {
     text-decoration: none;
@@ -547,7 +545,6 @@ h3 a:hover {
     font-weight: bold;
 }
 
-#postfooter a,
 #postfooter a:link,
 #postfooter a:visited,
 #postfooter a:hover {
@@ -559,7 +556,6 @@ h3 a:hover {
     text-decoration: underline;
 }
 
-#sitelinks a,
 #sitelinks a:link,
 #sitelinks a:visited,
 #sitelinks a:hover {
