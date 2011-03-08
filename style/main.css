@@ -45,6 +45,8 @@ img {
 
 img.graphic {
     border: none;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
 }
 
 img.aligncenter {
