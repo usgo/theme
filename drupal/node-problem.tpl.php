@@ -1,3 +1,4 @@
+<div><?php print $content; ?></div>
 <script>
 eidogoConfig = {enableShortcuts: true, markVariations: false, theme: "standard"};
 </script>
@@ -9,7 +10,6 @@ eidogoConfig = {enableShortcuts: true, markVariations: false, theme: "standard"}
 <?php $sgf_path = base_path() . $field_sgf[0]['filepath']; ?>
 <div class="eidogo-player-auto" sgf="<?php print $sgf_path; ?>"> </div>
 <a href="<?php print $sgf_path; ?>">Click here to download SGF.</a>
-<?php print $content; ?>
 <p>For problems, questions, or comments (about this web page or go in general), email the
-<a href="mailto:potw@usgo.org">Problem Of The Week editor</a>)
+<a href="mailto:potw@usgo.org">Problem Of The Week editor</a>
 </p>
