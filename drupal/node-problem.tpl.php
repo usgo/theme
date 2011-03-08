@@ -1,4 +1,3 @@
-<h2>I AM A GO PROBLEM</h2>
 <script>
 eidogoConfig = {enableShortcuts: true, markVariations: false, theme: "standard"};
 </script>
@@ -7,7 +6,10 @@ eidogoConfig = {enableShortcuts: true, markVariations: false, theme: "standard"}
 <noscript>
 <p>Error:  the Eidogo go player requires a JavaScript-enabled browser.  Most likely, to see the go board here, you only need to turn on JavaScript from the Options tab on your browser's Tool menu.</p>
 </noscript>
-
-<div class="eidogo-player-auto" sgf="<?php print base_path() . $field_sgf[0]['filepath']; ?>"> </div>
-<a href="<?php print base_path() . $field_sgf[0]['filepath']; ?>">Click here to download SGF.</a>
+<?php $sgf_path = base_path() . $field_sgf[0]['filepath']; ?>
+<div class="eidogo-player-auto" sgf="<?php print $sgf_path; ?>"> </div>
+<a href="<?php print $sgf_path; ?>">Click here to download SGF.</a>
 <?php print $content; ?>
+<p>For problems, questions, or comments (about this web page or go in general), email the
+<a href="mailto:potw@usgo.org">Problem Of The Week editor</a>)
+</p>
