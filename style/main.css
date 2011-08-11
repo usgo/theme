@@ -104,11 +104,6 @@ tr:nth-child(odd) {
     background: #d3d3af;
 }
 
-tr:hover td {
-    background: #642020;
-    color: white;
-}
-
 #content {
     min-height: 600px;
 }
