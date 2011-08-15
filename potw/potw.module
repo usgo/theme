@@ -25,7 +25,7 @@ function potw_block($op = 'list', $delta = 0, $edit = array()) {
   }
   elseif ($op == 'view') {
     $block['subject'] = 'Problem of the Week';
-    $block['content'] = file_get_contents('/var/www/sites/usgo.org/problems/current_go_problem.inc');
+    $block['content'] = file_get_contents('/var/www/usgo.org/problems/current_go_problem.inc');
     return $block;
   }
 }
