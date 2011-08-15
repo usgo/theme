@@ -1,1 +1,0 @@
-newsbar.cached.html
