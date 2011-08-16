@@ -1,4 +1,4 @@
-1 * * * * curl http://usgo.emptypath.com/theme/includes/newsbar.generate.php -o /var/www/usgo.org/theme/includes/extracol.cached.html
-3 * * * * curl http://usgo.emptypath.com/theme/includes/drupal.frontpage.generate.php -o /var/www/usgo.org/theme/includes/drupal.frontpage.cached.html
-5 * * * * curl http://usgo.emptypath.com/theme/includes/drupal.wphead.generate.php -o /var/www/usgo.org/theme/includes/drupal.wphead.cached.html
+1 * * * * curl http://www.usgo.emptypath.com/theme/includes/newsbar.generate.php -o /var/www/usgo.org/theme/includes/extracol.cached.html
+3 * * * * curl http://www.usgo.emptypath.com/theme/includes/drupal.frontpage.generate.php -o /var/www/usgo.org/theme/includes/drupal.frontpage.cached.html
+5 * * * * curl http://www.usgo.emptypath.com/theme/includes/drupal.wphead.generate.php -o /var/www/usgo.org/theme/includes/drupal.wphead.cached.html
 7 * * * * python /var/www/usgo.org/theme/includes/scrape_regions.py
