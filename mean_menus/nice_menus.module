@@ -27,43 +27,6 @@ function mean_menus_help($path, $arg) {
 }
 
 /**
- * Implements hook_form_alter().
- */
-function mean_menus_form_alter(&$form, $form_state, $form_id) {
-  switch ($form_id) {
-    case 'system_theme_settings':
-
-      // This is a global setting, so only insert the field
-      // on the global settings page.
-      if (arg(4) && arg(4) != 'global') {
-        return;
-      }
-
-      // Have to add a custom submit handler since this form doesn't use
-      // the standard system submit handler.
-      $form['#submit'][] = 'mean_menus_system_theme_settings_submit';
-
-      // Add global theme setting for a custom CSS file.
-      $form['mean_menus_custom_css'] = array(
-        '#type' => 'textfield',
-        '#title' => t('Path to custom Mean menus CSS file'),
-        '#description' => t('To override the default Mean menus CSS layout, enter the path to your custom CSS file.  It should be a relative path from the root of your Drupal install (e.g. sites/all/themes/example/mymenu.css).'),
-        '#default_value' => variable_get('mean_menus_custom_css', ''),
-        // Field appears below submit buttons without this -- yucky.
-        '#weight' => 0,
-      );
-      break;
-  }
-}
-
-/**
- * Records the Mean menu custom CSS file per theme.
- */
-function mean_menus_system_theme_settings_submit($form, &$form_state) {
-  variable_set('mean_menus_custom_css', $form_state['values']['mean_menus_custom_css']);
-}
-
-/**
  * Implements hook_menu().
  */
 function mean_menus_menu() {
@@ -88,38 +51,6 @@ function mean_menus_admin_settings($form, &$form_state) {
     '#description' => t('The total number of independent Mean menus blocks you want. Enter a number between 0 and 99. If you set this to 0, you will have no blocks created but you can still use the Mean menus theme functions directly in your theme.'),
     '#default_value' => variable_get('mean_menus_number', '2'),
     '#size' => 2,
-  );
-  $form['mean_menus_js'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Use JavaScript'),
-    '#description' => t('This will add Superfish Jquery to Mean menus. This is required for Mean menus to work properly in Internet Explorer.'),
-    '#default_value' => variable_get('mean_menus_js', 1),
-  );
-  $form['mean_menus_sf_options'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Advanced: Superfish options'),
-    '#description' => t('You can change the default Superfish options by filling out the desired values here. These only take effect if the Use JavaScript box above is checked.'),
-    '#collapsible' => TRUE,
-    '#collapsed' => TRUE,
-  );
-  $form['mean_menus_sf_options']['mean_menus_sf_delay'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Mouse delay'),
-    '#description' => t('The delay in milliseconds that the mouse can remain outside a submenu without it closing.'),
-    '#default_value' => variable_get('mean_menus_sf_delay', 800),
-    '#size' => 5,
-  );
-  $form['mean_menus_sf_options']['mean_menus_sf_speed'] = array(
-    '#type' => 'select',
-    '#title' => t('Animation speed'),
-    '#multiple' => FALSE,
-    '#description' => t('Speed of the menu open/close animation.'),
-    '#options' => array(
-      'slow' => t('slow'),
-      'normal' => t('normal'),
-      'fast' => t('fast'),
-    ),
-    '#default_value' => variable_get('mean_menus_sf_speed', 1),
   );
 
   // Custom validation to make sure the user is entering numbers.
@@ -147,35 +78,6 @@ function mean_menus_settings_validate($form, &$form_state) {
  * and the menus are unstyled.
  */
 function mean_menus_init() {
-  // Add Superfish JavaScript, if enabled.
-  if (variable_get('mean_menus_js', 1) == 1) {
-    // The script, from http://users.tpg.com.au/j_birch/plugins/superfish.
-    drupal_add_js(drupal_get_path('module', 'mean_menus') . '/superfish/js/superfish.js');
-    // Add the Superfish options variables.
-    drupal_add_js(array(
-      'mean_menus_options' => array(
-        'delay' => variable_get('mean_menus_sf_delay', 800),
-        'speed' => variable_get('mean_menus_sf_speed', 1),
-      ),
-    ), array('type' => 'setting', 'scope' => JS_DEFAULT));
-    // Add the bgIframe plugin.
-    drupal_add_js(drupal_get_path('module', 'mean_menus') . '/superfish/js/jquery.bgiframe.min.js');
-    // Add the HoverIntent plugin.
-    drupal_add_js(drupal_get_path('module', 'mean_menus') . '/superfish/js/jquery.hoverIntent.minified.js');
-    // The Mean menus implementation.
-    drupal_add_js(drupal_get_path('module', 'mean_menus') . '/mean_menus.js');
-  }
-
-  // Add main CSS functionality.
-  drupal_add_css(drupal_get_path('module', 'mean_menus') . '/mean_menus.css', array('group' => CSS_DEFAULT, 'basename' => 'mean_menus.css'));
-  // Add custom CSS layout if specified.
-  if ($custom = variable_get('mean_menus_custom_css', '')) {
-    drupal_add_css($custom, array('group' => CSS_DEFAULT, 'basename' => 'mean_menus_custom.css'));
-  }
-  // Fall back to default layout.
-  else {
-    drupal_add_css(drupal_get_path('module', 'mean_menus') . '/mean_menus_default.css', array('group' => CSS_DEFAULT, 'basename' => 'mean_menus_default.css'));
-  }
 }
 
 /**
@@ -214,13 +116,6 @@ function mean_menus_block_configure($delta) {
     '#default_value' => variable_get('mean_menus_depth_' . $delta, -1),
     '#options' => drupal_map_assoc(range(-1, 5)),
   );
-  $form['mean_menus_type_' . $delta] = array(
-    '#type' => 'select',
-    '#title' => t('Menu Style'),
-    '#description' => t('right: menu items are listed on top of each other and expand to the right') . '<br />' . t('left: menu items are listed on top of each other and expand to the left') . '<br />' . t('down: menu items are listed side by side and expand down'),
-    '#default_value' => variable_get('mean_menus_type_' . $delta, 'right'),
-    '#options' => drupal_map_assoc(array('right', 'left', 'down')),
-  );
   return $form;
 }
 
@@ -231,7 +126,6 @@ function mean_menus_block_save($delta, $edit) {
   variable_set('mean_menus_name_' . $delta, $edit['mean_menus_name_' . $delta]);
   variable_set('mean_menus_menu_' . $delta, $edit['mean_menus_menu_' . $delta]);
   variable_set('mean_menus_depth_' . $delta, $edit['mean_menus_depth_' . $delta]);
-  variable_set('mean_menus_type_' . $delta, $edit['mean_menus_type_' . $delta]);
 }
 
 /**
@@ -240,16 +134,9 @@ function mean_menus_block_save($delta, $edit) {
 function mean_menus_block_view($delta) {
   // Build the Mean menu for the block.
   list($menu_name) = explode(':', variable_get('mean_menus_menu_' . $delta, 'navigation:0'));
-  $direction = variable_get('mean_menus_type_' . $delta, 'right');
   $depth = variable_get('mean_menus_depth_' . $delta, '-1');
-  if ($output = theme('mean_menus', array('id' => $delta, 'menu_name' => $menu_name, 'direction' => $direction, 'depth' => $depth))) {
+  if ($output = theme('mean_menus', array('id' => $delta, 'menu_name' => $menu_name, 'depth' => $depth))) {
     $block['content'] = $output['content'];
-    if (variable_get('mean_menus_type_' . $delta, 'right') == 'down') {
-      $class = 'mean-menu-hide-title';
-    }
-    else {
-      $class = 'mean-menu-show-title';
-    }
     // If we're building the navigation block
     // use the same block title logic as menu module.
     if ($output['subject'] == t('navigation') && $user->uid) {
@@ -279,13 +166,13 @@ function mean_menus_theme() {
       'variables' => array('menu' => NULL, 'depth' => -1, 'trail' => NULL),
     ),
     'mean_menus' => array(
-      'variables' => array('id' => NULL, 'menu_name' => NULL, 'mlid' => NULL, 'direction' => 'right', 'depth' => -1, 'menu' => NULL),
+      'variables' => array('id' => NULL, 'menu_name' => NULL, 'mlid' => NULL, 'depth' => -1, 'menu' => NULL),
     ),
     'mean_menus_main_menu' => array(
-      'variables' => array('direction' => 'down', 'depth' => -1),
+      'variables' => array('depth' => -1),
     ),
     'mean_menus_secondary_menu' => array(
-      'variables' => array('direction' => 'down', 'depth' => -1),
+      'variables' => array('depth' => -1),
     ),
     'mean_menus_menu_item_link' => array(
       'variables' => array('element' => array()),
@@ -494,8 +381,6 @@ function theme_mean_menus_build($variables) {
  *   The top parent menu name from which to build the full menu.
  * @param $mlid
  *   The menu ID from which to build the displayed menu.
- * @param $direction
- *   Optional. The direction the menu expands. Default is 'right'.
  * @param $depth
  *   The number of children levels to display. Use -1 to display all children
  *   and use 0 to display no children.
@@ -516,13 +401,12 @@ function theme_mean_menus($variables) {
   $id = $variables['id'];
   $menu_name = $variables['menu_name'];
   $mlid = $variables['mlid'];
-  $direction = $variables['direction'];
   $depth = $variables['depth'];
   $menu = $variables['menu'];
 
   if ($menu_tree = theme('mean_menus_tree', array('menu_name' => $menu_name, 'mlid' => $mlid, 'depth' => $depth, 'menu' => $menu))) {
     if ($menu_tree['content']) {
-      $output['content'] = '<ul class="mean-menu mean-menu-' . $direction . '" id="mean-menu-' . $id . '">' . $menu_tree['content'] . '</ul>' . "\n";
+      $output['content'] = '<ul class="mean-menu id="mean-menu-' . $id . '">' . $menu_tree['content'] . '</ul>' . "\n";
       $output['subject'] = $menu_tree['subject'];
     }
   }
@@ -532,8 +416,6 @@ function theme_mean_menus($variables) {
 /**
  * Theme the main menu as a Mean menu.
  *
- * @param $direction
- *   Optional. The direction the menu expands. Default is 'down'.
  * @param $depth
  *   The number of children levels to display. Use -1 to display all children
  *   and use 0 to display no children.
@@ -542,18 +424,15 @@ function theme_mean_menus($variables) {
  *   An HTML string of Mean main menu links.
  */
 function theme_mean_menus_main_menu($variables) {
-  $direction = $variables['direction'];
   $depth = $variables['depth'];
   $menu_name = variable_get('menu_main_links_source', 'main-menu');
-  $output = theme('mean_menus', array('id' => 0, 'menu_name' => $menu_name, 'mlid' => 0, 'direction' => $direction, 'depth' => $depth));
+  $output = theme('mean_menus', array('id' => 0, 'menu_name' => $menu_name, 'mlid' => 0, 'depth' => $depth));
   return $output['content'];
 }
 
 /**
  * Theme the secondary menu as a Mean menu.
  *
- * @param $direction
- *   Optional. The direction the menu expands. Default is 'down'.
  * @param $depth
  *   The number of children levels to display. Use -1 to display all children
  *   and use 0 to display no children.
@@ -562,10 +441,9 @@ function theme_mean_menus_main_menu($variables) {
  *   An HTML string of Mean secondary menu links.
  */
 function theme_mean_menus_secondary_menu($variables) {
-  $direction = $variables['direction'];
   $depth = $variables['depth'];
   $menu_name = variable_get('menu_secondary_links_source', 'user-menu');
-  $output = theme('mean_menus', array('id' => 0, 'menu_name' => $menu_name, 'mlid' => 0, 'direction' => $direction, 'depth' => $depth));
+  $output = theme('mean_menus', array('id' => 0, 'menu_name' => $menu_name, 'mlid' => 0, 'depth' => $depth));
   return $output['content'];
 }
 
