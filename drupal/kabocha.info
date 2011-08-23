@@ -1,7 +1,7 @@
 name = Kabocha
 description = Table-less 2-3 column variable width theme
 version = 1.0
-core = 6.x
+core = 7.x
 engine = phptemplate
 regions[sidebar_first] = Left sidebar
 regions[sidebar_second] = Right sidebar
