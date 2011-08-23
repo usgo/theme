@@ -1,4 +1,0 @@
-name = Mean Menus
-description = CSS/jQuery expanding menus, drupal parts heavily based on "Nice Menus"
-dependencies[] = menu
-core = 6.x
