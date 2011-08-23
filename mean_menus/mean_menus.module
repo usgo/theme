@@ -116,6 +116,18 @@ function mean_menus_block_configure($delta) {
     '#default_value' => variable_get('mean_menus_depth_' . $delta, -1),
     '#options' => drupal_map_assoc(range(-1, 5)),
   );
+  $form['mean_menus_classes_'. $delta] = array(
+    '#type' => 'textfield',
+    '#title' => t('Menu Classes'),
+    '#description' => t('CSS classes to add to the menu when displayed'),
+    '#default_value' => variable_get('mean_menus_classes_'. $delta, ''),
+  );
+  $form['mean_menus_id_'. $delta] = array(
+    '#type' => 'textfield',
+    '#title' => t('Menu Id'),
+    '#description' => t('CSS id to add to the menu when displayed'),
+    '#default_value' => variable_get('mean_menus_id_'. $delta, 'mean-menu-'. $delta),
+  );
   return $form;
 }
 
@@ -126,6 +138,8 @@ function mean_menus_block_save($delta, $edit) {
   variable_set('mean_menus_name_' . $delta, $edit['mean_menus_name_' . $delta]);
   variable_set('mean_menus_menu_' . $delta, $edit['mean_menus_menu_' . $delta]);
   variable_set('mean_menus_depth_' . $delta, $edit['mean_menus_depth_' . $delta]);
+  variable_set('mean_menus_classes_'. $delta, $edit['mean_menus_classes_'. $delta]);
+  variable_set('mean_menus_id_'. $delta, $edit['mean_menus_id_'. $delta]);
 }
 
 /**
@@ -134,8 +148,10 @@ function mean_menus_block_save($delta, $edit) {
 function mean_menus_block_view($delta) {
   // Build the Mean menu for the block.
   list($menu_name) = explode(':', variable_get('mean_menus_menu_' . $delta, 'navigation:0'));
-  $depth = variable_get('mean_menus_depth_' . $delta, '-1');
-  if ($output = theme('mean_menus', array('id' => $delta, 'menu_name' => $menu_name, 'depth' => $depth))) {
+  $depth =  variable_get('mean_menus_depth_'   . $delta, '-1');
+  $cid =    variable_get('mean_menus_id_'      . $delta, '');
+  $cclass = variable_get('mean_menus_classes_' . $delta, '');
+  if ($output = theme('mean_menus', array('id' => $cid, 'class' => $cclass, 'menu_name' => $menu_name, 'depth' => $depth))) {
     $block['content'] = $output['content'];
     // If we're building the navigation block
     // use the same block title logic as menu module.
@@ -166,7 +182,7 @@ function mean_menus_theme() {
       'variables' => array('menu' => NULL, 'depth' => -1, 'trail' => NULL),
     ),
     'mean_menus' => array(
-      'variables' => array('id' => NULL, 'menu_name' => NULL, 'mlid' => NULL, 'depth' => -1, 'menu' => NULL),
+      'variables' => array('id' => NULL, 'class' => NULL, 'menu_name' => NULL, 'mlid' => NULL, 'depth' => -1, 'menu' => NULL),
     ),
     'mean_menus_main_menu' => array(
       'variables' => array('depth' => -1),
@@ -399,14 +415,26 @@ function theme_mean_menus($variables) {
   );
 
   $id = $variables['id'];
+  $class = $variables['class'];
   $menu_name = $variables['menu_name'];
   $mlid = $variables['mlid'];
   $depth = $variables['depth'];
   $menu = $variables['menu'];
 
+  $class_temp = '';
+  $id_temp = '';
+  if (!empty($class))
+  {
+      $class_temp = "class=\"$class\"";
+  }
+  if (!empty($id))
+  {
+      $id_temp = "id=\"$id\"";
+  }
+
   if ($menu_tree = theme('mean_menus_tree', array('menu_name' => $menu_name, 'mlid' => $mlid, 'depth' => $depth, 'menu' => $menu))) {
     if ($menu_tree['content']) {
-      $output['content'] = '<ul class="mean-menu id="mean-menu-' . $id . '">' . $menu_tree['content'] . '</ul>' . "\n";
+      $output['content'] = "<ul $class_temp $id_temp>" . $menu_tree['content'] . '</ul>' . "\n";
       $output['subject'] = $menu_tree['subject'];
     }
   }
@@ -426,7 +454,7 @@ function theme_mean_menus($variables) {
 function theme_mean_menus_main_menu($variables) {
   $depth = $variables['depth'];
   $menu_name = variable_get('menu_main_links_source', 'main-menu');
-  $output = theme('mean_menus', array('id' => 0, 'menu_name' => $menu_name, 'mlid' => 0, 'depth' => $depth));
+  $output = theme('mean_menus', array('id' => 'mean-menu-0', 'class' => NULL, 'menu_name' => $menu_name, 'mlid' => 0, 'depth' => $depth));
   return $output['content'];
 }
 
@@ -443,7 +471,7 @@ function theme_mean_menus_main_menu($variables) {
 function theme_mean_menus_secondary_menu($variables) {
   $depth = $variables['depth'];
   $menu_name = variable_get('menu_secondary_links_source', 'user-menu');
-  $output = theme('mean_menus', array('id' => 0, 'menu_name' => $menu_name, 'mlid' => 0, 'depth' => $depth));
+  $output = theme('mean_menus', array('id' => 'mean-menu-0', 'class' => NULL, 'menu_name' => $menu_name, 'mlid' => 0, 'depth' => $depth));
   return $output['content'];
 }
 
