@@ -1,20 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <?php include(path_to_theme() . "/includes/meta.html"); ?>
-        <title><?php print $head_title ?></title>
-        <?php print $styles; ?>
-        <?php include(path_to_theme() . "/includes/head.html"); ?>
-        <?php print $scripts; ?>
-<?php
-if (!empty($sidebar_second)) {
-    print '<link rel="stylesheet" type="text/css" href="/theme/style/right_col.css" />';
-}
-if ($is_front) {
-    include(path_to_theme() . "/includes/drupal.wphead.html");
-} ?>
-    </head>
-    <body class="<?php print $body_classes; ?>">
         <div id="header">
             <?php include(path_to_theme() . "/includes/header.html"); ?>
             <div id="navwrap">
@@ -65,13 +48,10 @@ else
         </div>
         <div id="postfooter" class="containfloats">
             <?php include(path_to_theme() . "/includes/ads.html"); ?>
-            <?php print theme('links', menu_navigation_links('menu-footer-links'), array('id' => 'sitelinks')) ?>            
+            <?php print theme('links', menu_navigation_links('menu-footer-links'), array('id' => 'sitelinks')) ?>
         </div>
-        <?php print $closure;?>
-    </body>
-</html>
 <!--
-Copyright 2010 Joshua Simmons
+Copyright 2011 Joshua Simmons
 
 All rights reserved
 -->
