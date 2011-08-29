@@ -358,8 +358,13 @@ function theme_mean_menus_build($variables) {
           '#attributes' => array(),
         );
         $variables['element'] = $element;
-        
-        $output .= '<li class="menu-' . $mlid . ' ' . $parent_class . $class . $first_class . $oddeven_class . $last_class . '">'. theme('mean_menus_menu_item_link', $variables);
+
+        if ($children) {
+          $link_or_span = '<span class="opener">' . $element['#title'] . '</span>';
+        } else {
+          $link_or_span = theme('mean_menus_menu_item_link', $variables);
+        }
+        $output .= '<li class="menu-' . $mlid . ' ' . $parent_class . $class . $first_class . $oddeven_class . $last_class . '">'. $link_or_span;
         // Check our depth parameters.
         if ($menu_item['link']['depth'] <= $depth || $depth == -1) {
           // Build the child UL only if children are displayed for the user.
