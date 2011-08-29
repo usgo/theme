@@ -345,6 +345,13 @@ function theme_mean_menus_build($variables) {
       }
       // If it has children build a mean little tree under it.
       if ((!empty($menu_item['link']['has_children'])) && (!empty($menu_item['below'])) && $depth != 0) {
+        # parent links become opener spans, so add the real link under them
+        $index_link = array(
+         'below' => '',
+         'link' => $menu_item['link']
+        );
+        $index_link['link']['link_title'] = 'Index';
+        array_unshift($menu_item['below'], $index_link);
         // Keep passing children into the function 'til we get them all.
         $children = theme('mean_menus_build', array('menu' => $menu_item['below'], 'depth' => $depth, 'trail' => $trail));
         // Set the class to parent only of children are displayed.
