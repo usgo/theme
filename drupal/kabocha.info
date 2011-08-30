@@ -13,4 +13,6 @@ regions[page_bottom] = Page bottom
 features[] = main_menu
 features[] = secondary_menu
 
-stylesheets[all][] = style.css
+stylesheets[all][] = drupal_only.css
+stylesheets[all][] = style/main.css
+stylesheets[all][] = style/two_col.css
