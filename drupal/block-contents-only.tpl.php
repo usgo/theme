@@ -1,1 +1,1 @@
-<?php print $block->content ?>
+<?php print $content ?>
