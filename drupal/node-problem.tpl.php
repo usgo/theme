@@ -1,4 +1,4 @@
-<div id="weeklyextra"><?php print $content; ?></div>
+<div id="weeklyextra"><?php print render($content); ?></div>
 <script>
 eidogoConfig = {enableShortcuts: true, markVariations: false, theme: "standard"};
 </script>

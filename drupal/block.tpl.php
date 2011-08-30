@@ -10,7 +10,7 @@
 <?php
 }
 ?>
-<?php print $content ?>
+<?php print render($content) ?>
 <?php if ($block->module != 'mean_menus')
 {
 ?>
