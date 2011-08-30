@@ -10,13 +10,13 @@
                     <div id="content">
 <?php
 if (!empty($tabs)) {
-    print "<div class=\"tabs\">$tabs</div>";
+    print "<div class=\"tabs\">" . render($tabs) . "</div>";
 }
-if ($show_messages && !empty($messages)) {
+if (!empty($messages)) {
     print $messages;
 }
-if (!empty($help)) {
-    print "<div id=\"help\">$help</div>";
+if (!empty($page['help'])) {
+    print "<div id=\"help\">" . render($page['help']) . "</div>";
 }
 if ($is_front) {
     print "<h1 id=\"pagetitle\">Welcome to the American Go Association</h1>";
@@ -30,16 +30,16 @@ if ($is_front) {
 else
 {
     print "<h1 id=\"pagetitle\">$title</h1>\n";
-    print $content;
+    print render($page['content']);
 }
 ?>
                     </div>
                 </div>
                 <div id="navcol" class="ie7fix">
-                    <?php if (!empty($sidebar_first)) {print $sidebar_first;} ?>
+                    <?php if (!empty($page['sidebar_first'])) {print render($page['sidebar_first']);} ?>
                 </div>
-<?php if (!empty($sidebar_second)) {
-                print "<div id=\"extracol\">$sidebar_second</div>";
+<?php if (!empty($page['sidebar_second'])) {
+                print "<div id=\"extracol\">" . render($page['sidebar_second']) . "</div>";
 } ?>
             </div>
         </div>
