@@ -1,7 +1,7 @@
         <div id="header">
             <?php include(path_to_theme() . "/includes/header.html"); ?>
             <div id="navwrap">
-                <?php print theme('links', $secondary_links, array('class' => 'navbar', 'id' => 'headerlinks')) ?>
+                <?php print theme('links', $main_menu, array('class' => 'navbar', 'id' => 'headerlinks')) ?>
             </div>
         </div>
         <div id="container">
