@@ -36,7 +36,7 @@ else
                     </div>
                 </div>
                 <div id="navcol" class="ie7fix">
-                    <?php print $sidebar_first; ?>
+                    <?php if (!empty($sidebar_first)) {print $sidebar_first;} ?>
                 </div>
 <?php if (!empty($sidebar_second)) {
                 print "<div id=\"extracol\">$sidebar_second</div>";
