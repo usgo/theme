@@ -60,7 +60,7 @@ if (function_exists('wp_pagenavi')) {
     </body>
 </html>
 <!--
-Copyright 2010 Joshua Simmons
+Copyright 2010-2011 Joshua Simmons
 
 All rights reserved
 -->
