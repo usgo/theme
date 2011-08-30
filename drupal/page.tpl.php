@@ -9,17 +9,28 @@
                 <div id="contentwrapper">
                     <div id="content">
 <?php
-if (!empty($tabs)) {
-    print "<div class=\"tabs\">" . render($tabs) . "</div>";
-}
 if (!empty($messages)) {
     print $messages;
 }
 if (!empty($page['help'])) {
-    print "<div id=\"help\">" . render($page['help']) . "</div>";
+    print '<div id="help">' . render($page['help']) . '</div>';
+}
+if ($page['highlighted']) {
+    print '<div id="highlighted">' . render($page['highlighted']) . '</div>';
+}
+print render($title_prefix);
+if ($is_front) {
+    print '<h1 id="pagetitle">Welcome to the American Go Association</h1>';
+}
+else
+{
+    print "<h1 id=\"pagetitle\">$title</h1>\n";
+}
+print render($title_suffix);
+if (!empty($tabs)) {
+    print "<div class=\"tabs\">" . render($tabs) . "</div>";
 }
 if ($is_front) {
-    print "<h1 id=\"pagetitle\">Welcome to the American Go Association</h1>";
     include(path_to_theme() . "/includes/drupal.frontpage.html");
 ?>
                         <div id="morenewsnav">
@@ -29,7 +40,6 @@ if ($is_front) {
 }
 else
 {
-    print "<h1 id=\"pagetitle\">$title</h1>\n";
     print render($page['content']);
 }
 ?>
