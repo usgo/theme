@@ -5,27 +5,23 @@
  */
 
 /**
- * Implementation of hook_help().
+ * Implements hook_block_info().
+ *
+ * This hook declares what blocks are provided by the module.
  */
-function potw_help($path, $arg) {
-  switch ($path) {
-    case 'potw':
-      return '<p>'. t('A simple module to include the problem of the week in a sidebar.') .'</p>';
-  }
+function potw_block_info() {
+  $blocks[0] = array(
+    'info' => t('Problem of the Week'),
+  );
+  return $blocks;
 }
+
 
 /**
  * Implementation of hook_block().
  */
-function potw_block($op = 'list', $delta = 0, $edit = array()) {
-  if ($op == "list") {
-    $block = array();
-    $block[0]["info"] = t('Problem of the Week Sidebar');
-    return $block;
-  }
-  elseif ($op == 'view') {
-    $block['subject'] = 'Problem of the Week';
-    $block['content'] = file_get_contents('/var/www/usgo.org/problems/current_go_problem.inc');
-    return $block;
-  }
+function potw_block_view($delta = 0) {
+  $block['subject'] = 'Problem of the Week';
+  $block['content'] = file_get_contents('/var/www/usgo.org/problems/current_go_problem.inc');
+  return $block;
 }

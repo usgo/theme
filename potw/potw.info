@@ -1,4 +1,3 @@
-; $Id$
 name = Problem of the Week sidebar
 description = A simple module that includes the problem of the week in the sidebar
-core = 6.x
+core = 7.x
