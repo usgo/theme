@@ -1,7 +1,7 @@
         <div id="header">
             <?php include(path_to_theme() . "/includes/header.html"); ?>
             <div id="navwrap">
-                <?php print theme('links', $main_menu, array('class' => 'navbar', 'id' => 'headerlinks')) ?>
+                <?php print theme('links', array('links' => menu_navigation_links('menu-header-links'), 'attributes' => array('class'=> array('navbar'), 'id' => 'headerlinks') )); ?>
             </div>
         </div>
         <div id="container">
@@ -58,7 +58,7 @@ else
         </div>
         <div id="postfooter" class="containfloats">
             <?php include(path_to_theme() . "/includes/ads.html"); ?>
-            <?php print theme('links', menu_navigation_links('menu-footer-links'), array('id' => 'sitelinks')) ?>
+            <?php print theme('links', array('links' => menu_navigation_links('menu-footer-links'), 'attributes' => array('id'=> 'sitelinks'))); ?>
         </div>
 <!--
 Copyright 2011 Joshua Simmons
