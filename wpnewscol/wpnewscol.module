@@ -6,27 +6,22 @@
  */
 
 /**
- * Implementation of hook_help().
+ * Implements hook_block_info().
+ *
+ * This hook declares what blocks are provided by the module.
  */
-function wpnewscol_help($path, $arg) {
-  switch ($path) {
-    case 'wpnewscol':
-      return '<p>'. t('A simple module to include the cached file containing Wordpress news in a sidebar.') .'</p>';
-  }
+function wpnewscol_block_info() {
+  $blocks[0] = array(
+    'info' => t('Wordpress Latest News Sidebar'),
+  );
+  return $blocks;
 }
 
 /**
  * Implementation of hook_block().
  */
-function wpnewscol_block($op = 'list', $delta = 0, $edit = array()) {
-  if ($op == "list") {
-    $block = array();
-    $block[0]["info"] = t('Wordpress Latest News Sidebar');
-    return $block;
-  }
-  elseif ($op == 'view') {
-    $block['subject'] = 'Latest News';
-    $block['content'] = file_get_contents('/var/www/usgo.org/theme/includes/extracol.html');
-    return $block;
-  }
+function wpnewscol_block_view($delta = 0) {
+  $block['subject'] = 'Latest News';
+  $block['content'] = file_get_contents('/var/www/usgo.org/theme/includes/extracol.html');
+  return $block;
 }
