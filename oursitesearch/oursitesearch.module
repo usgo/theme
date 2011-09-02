@@ -5,27 +5,22 @@
  */
 
 /**
- * Implementation of hook_help().
+ * Implements hook_block_info().
+ *
+ * This hook declares what blocks are provided by the module.
  */
-function oursitesearch_help($path, $arg) {
-  switch ($path) {
-    case 'oursitesearch':
-      return '<p>'. t('A simple module to show our custom google site search box.') .'</p>';
-  }
+function oursitesearch_block_info() {
+  $blocks[0] = array(
+    'info' => t('Our Custom Site Search Box'),
+  );
+  return $blocks;
 }
 
 /**
  * Implementation of hook_block().
  */
-function oursitesearch_block($op = 'list', $delta = 0, $edit = array()) {
-  if ($op == "list") {
-    $block = array();
-    $block[0]["info"] = t('Our Custom Site Search Box');
-    return $block;
-  }
-  elseif ($op == 'view') {
-    $block['subject'] = 'Site Search';
-    $block['content'] = '<form class="search" id="sitesearch" action="http://www.google.com/search"><fieldset><legend>Site Search</legend><input type="text" class="searchbox" id="q" name="q" maxlength="255" value="" /><input type="hidden" name="sitesearch" value="usgo.org" /><input type="submit" class="searchbutton" id="searchbutton" value="Search" /></fieldset></form>';
-    return $block;
-  }
+function oursitesearch_block_view($delta = 0) {
+  $block['subject'] = 'Site Search';
+  $block['content'] = '<form class="search" id="sitesearch" action="http://www.google.com/search"><fieldset><legend>Site Search</legend><input type="text" class="searchbox" id="q" name="q" maxlength="255" value="" /><input type="hidden" name="sitesearch" value="usgo.org" /><input type="submit" class="searchbutton" id="searchbutton" value="Search" /></fieldset></form>';
+  return $block;
 }
