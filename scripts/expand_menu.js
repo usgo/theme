@@ -11,22 +11,22 @@
  * discard the cookie info if something has changed
  */
 function fingerprint() {
-    var temp = $('.expanding');
+    var temp = jQuery('.expanding');
     var res = temp.length * 255;
     
     /* just do various things to capture a little bit of info from
      * every .expanding that exists
      */
     temp.each(function(i) {
-            var str = $(this).attr('class') + $(this).attr('id');
+            var str = jQuery(this).attr('class') + jQuery(this).attr('id');
             res += str.length * (i+1);
             for (var j = 0; j < str.length; ++j) {
                 res += str.charCodeAt(j) * (i+1) * (j+1) % 467;
             }
 
-            res += $('.opener', this).length * (i+1);
-            res += $('a', this).length * (i+1) * 7;
-            res += $('ul', this).length * (i+1) * 17;
+            res += jQuery('.opener', this).length * (i+1);
+            res += jQuery('a', this).length * (i+1) * 7;
+            res += jQuery('ul', this).length * (i+1) * 17;
             res %= 100003;
         });
 
@@ -45,23 +45,23 @@ function init_expanding_menu() {
     // If in doubt, increment it!
     var menu_version = 4;
 
-    $.cookies.setOptions({path: '/'});
+    jQuery.cookies.setOptions({path: '/'});
 
     // ensure cookies are enabled, otherwise return false
     // this should signal that some other menu system should be used
     // instead, since that doesn't require cookies
 
-    if (!$.cookies.test()) {
+    if (!jQuery.cookies.test()) {
         return false;
     }
     
 
     // set hidable for matching uls, and shower for matching a's
-    $('.expanding .opener + ul')
+    jQuery('.expanding .opener + ul')
         .addClass("hidable")
         .prev().addClass("shower")
-                .click(function() { $(this).toggleClass("shower");
-                                    $(this).toggleClass("hider");
+                .click(function() { jQuery(this).toggleClass("shower");
+                                    jQuery(this).toggleClass("hider");
                                     });
 
     // get cookie.  check main version.  throw out data if old, skip to hiding
@@ -70,11 +70,11 @@ function init_expanding_menu() {
     // stores the status that will also be put into a cookie (in JSON)
     window.menu_status = null;
 
-    window.cached_showhide = $('.expanding .shower + .hidable').prev();
+    window.cached_showhide = jQuery('.expanding .shower + .hidable').prev();
     var fp = fingerprint();
 
     try {
-        var temp = $.cookies.get('saved_menu');
+        var temp = jQuery.cookies.get('saved_menu');
         
         /* convert from compact array to expanded one */
         window.menu_status = {};
@@ -86,7 +86,7 @@ function init_expanding_menu() {
         }
         for (var i = 0; i < temp.shown.length; ++i) {
             if (temp.shown[i] >= window.menu_status.shown.length) {
-                $.cookies.del('saved_menu');
+                jQuery.cookies.del('saved_menu');
                 throw("saved menu cookie corrupted");
             } else {
                 window.menu_status.shown[temp.shown[i]] = true;
@@ -100,7 +100,7 @@ function init_expanding_menu() {
             throw("delete cookie");
         }
     } catch (e) {
-        $.cookies.del('saved_menu');
+        jQuery.cookies.del('saved_menu');
         window.menu_status = null;
     }
 
@@ -128,7 +128,7 @@ function init_expanding_menu() {
 
     window.cached_showhide
         .click(function() { 
-                var i = window.cached_showhide.index($(this));
+                var i = window.cached_showhide.index(jQuery(this));
                 window.menu_status.shown[i] = !window.menu_status.shown[i];
 
                 /* convert to slightly more compact format
@@ -144,19 +144,19 @@ function init_expanding_menu() {
                     }
                 }
 
-                $.cookies.set('saved_menu', to_write);
+                jQuery.cookies.set('saved_menu', to_write);
             });
 
     // add toggles (opposite ways for each case)
 
-    $('.shower').toggle(function() { $(this).next().slideDown("fast"); },
-                        function() { $(this).next().slideUp("fast"); });
+    jQuery('.shower').toggle(function() { jQuery(this).next().slideDown("fast"); },
+                        function() { jQuery(this).next().slideUp("fast"); });
 
-    $('.hider' ).toggle(function() { $(this).next().slideUp("fast"); },
-                        function() { $(this).next().slideDown("fast"); });
+    jQuery('.hider' ).toggle(function() { jQuery(this).next().slideUp("fast"); },
+                        function() { jQuery(this).next().slideDown("fast"); });
 
     // hide what should be hiden
-    $('.expanding .shower + .hidable').hide();
+    jQuery('.expanding .shower + .hidable').hide();
 
     return true;
 }
