@@ -78,13 +78,19 @@ function mean_menus_settings_validate($form, &$form_state) {
  * and the menus are unstyled.
  */
 function mean_menus_init() {
-  drupal_add_css(drupal_get_path('module', 'mean_menus') . '/style/expand.css');
+  drupal_add_css(drupal_get_path('module', 'mean_menus') . '/style/expand.css',
+                 array('every_page' => TRUE));
   drupal_add_css(drupal_get_path('module', 'mean_menus') . '/style/flyout.css',
-                 array('browsers' => array('IE' => 'gt IE 6', '!IE' => TRUE)));
-  drupal_add_js(drupal_get_path('module', 'mean_menus') . '/scripts/json2.js');
-  drupal_add_js(drupal_get_path('module', 'mean_menus') . '/scripts/jquery.cookies.js');
-  drupal_add_js(drupal_get_path('module', 'mean_menus') . '/scripts/expand_menu.js');
-  drupal_add_js(drupal_get_path('module', 'mean_menus') . '/scripts/startup.js');
+                 array('browsers' => array('IE' => 'gt IE 6', '!IE' => TRUE),
+                       'every_page' => TRUE));
+  drupal_add_js(drupal_get_path('module', 'mean_menus') . '/scripts/json2.js',
+                array('every_page' => TRUE));
+  drupal_add_js(drupal_get_path('module', 'mean_menus') . '/scripts/jquery.cookies.js',
+                array('every_page' => TRUE));
+  drupal_add_js(drupal_get_path('module', 'mean_menus') . '/scripts/expand_menu.js',
+                array('every_page' => TRUE));
+  drupal_add_js(drupal_get_path('module', 'mean_menus') . '/scripts/startup.js',
+                array('every_page' => TRUE));
 }
 
 /**
