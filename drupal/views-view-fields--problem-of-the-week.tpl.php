@@ -9,7 +9,7 @@ if (!empty($row->field_field_sgf_preview)) {
 else {
   $png_uri = $auto_base . ".png";
 }
-$auto_to_play = @file_get_contents('/var/www/usgo.org' . $auto_base . '.toplay.txt');
+$auto_to_play = @file_get_contents('/var/www/usgo.org' . $auto_base . '.toplay');
 $to_play = $fields['field_to_play']->content;
 $img = "<img src=\"$png_uri\" alt=\"$title\" />";
 print "<a class=\"potwpreview\" href=\"$content_uri\" title=\"$title\">$img</a>";
