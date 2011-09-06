@@ -484,3 +484,6 @@ fieldset { border: 0; margin: 0; padding: 0; }
     visibility: hidden;
 }
 
+.potwpreview img {
+    border: none;
+}
