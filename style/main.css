@@ -487,3 +487,10 @@ fieldset { border: 0; margin: 0; padding: 0; }
 .potwpreview img {
     border: none;
 }
+
+#extracol a.potwpreview,
+#extracol .potwpreview img {
+    display: block;
+    margin: 0 auto;
+}
+
