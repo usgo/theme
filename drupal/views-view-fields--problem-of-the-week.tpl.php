@@ -9,14 +9,16 @@ if (!empty($row->field_field_sgf_preview)) {
 else {
   $png_uri = $auto_base . ".png";
 }
-$auto_to_play = @file_get_contents('/var/www/usgo.org' . $auto_base . '.toplay');
 $to_play = $fields['field_to_play']->content;
 $img = "<img src=\"$png_uri\" alt=\"$title\" />";
 print "<a class=\"potwpreview\" href=\"$content_uri\" title=\"$title\">$img</a>";
 if ($to_play != "Automatic") {
   print "<p class=\"potwtoplay\">$to_play to play</p>";
 }
-elseif ($auto_to_play != FALSE) {
-  print "<p class=\"potwtoplay\">$auto_to_play to play</p>";
+else {
+  $auto_to_play = @file_get_contents("http://" . $_SERVER['SERVER_NAME'] . $auto_base . '.toplay');
+  if ($auto_to_play != FALSE) {
+    print "<p class=\"potwtoplay\">$auto_to_play to play</p>";
+  }
 }
 ?>
