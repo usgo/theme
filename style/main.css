@@ -494,3 +494,6 @@ fieldset { border: 0; margin: 0; padding: 0; }
     margin: 0 auto;
 }
 
+#extracol .potwtoplay {
+    text-align: center;
+}
