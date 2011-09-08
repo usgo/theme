@@ -510,3 +510,7 @@ div.potwproblem {
 div.potwproblem .potwtoplay {
     text-align: center;
 }
+
+ul.pager li {
+    margin: 0;
+}
