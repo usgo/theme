@@ -489,11 +489,24 @@ fieldset { border: 0; margin: 0; padding: 0; }
 }
 
 #extracol a.potwpreview,
-#extracol .potwpreview img {
+#extracol .potwpreview img,
+div.potwproblem a.potwpreview,
+div.potwproblem .potwpreview img {
     display: block;
     margin: 0 auto;
 }
 
-#extracol .potwtoplay {
+div.potwproblem {
+    width: 160px;
+    height: 210px;
+    float: left;
+}
+
+#content div.potwproblem .potwtoplay {
+    margin-top: 5px;
+}
+
+#extracol .potwtoplay,
+div.potwproblem .potwtoplay {
     text-align: center;
 }
