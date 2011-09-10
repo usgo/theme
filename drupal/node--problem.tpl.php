@@ -105,7 +105,21 @@
       $sgf_url = url(file_create_url($field_sgf[0]['uri']))
 ?>
 <script type="text/javascript">
-    eidogoConfig = {enableShortcuts: true, markVariations: false, theme: "compact"};
+eidogoConfig = {
+    theme: "standard", // "standard" or "compact"
+    mode: "view", // "play" or "view"
+    showComments: true,
+    showPlayerInfo: false,
+    showGameInfo: false,
+    showTools: false,
+    showOptions: false,
+    showNavTree: false,
+    markCurrent: true,
+    markVariations: false,
+    markNext: false,
+    problemMode: false,
+    enableShortcuts: true
+};
 </script>
 <script type="text/javascript" src="http://eidogo.com/player/js/all.compressed.js"></script>
 <noscript>
