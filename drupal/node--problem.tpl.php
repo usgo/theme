@@ -128,9 +128,7 @@ eidogoConfig = {
 <div class="eidogo-player-auto" sgf="<?php print $sgf_url; ?>"> </div>
 <?php print l("Downloadable game record", $sgf_url); ?>
 <?php print render($content); ?>
-<p>For problems, questions, or comments (about this web page or go in general), email the
-<a href="mailto:potw@usgo.org">Problem Of The Week editor</a>
-</p>
+<p>For problems, questions, or comments (<em>even if</em> they're about this web page or go in general), email the <a href="mailto:potw@usgo.org">Problem of the Week editor</a></p>
   </div>
 
   <?php print render($content['links']); ?>
