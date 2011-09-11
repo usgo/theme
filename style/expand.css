@@ -12,6 +12,10 @@
     padding-left: 20px;
 }
 
+.expand a.openerGoer {
+    display: inline;
+}
+
 /* preload these images, in newer browsers */
 body:after {
     content: url(../images/add.png) url(../images/subtract.png);

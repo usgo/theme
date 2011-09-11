@@ -149,11 +149,11 @@ function init_expanding_menu() {
 
     // add toggles (opposite ways for each case)
 
-    jQuery('.shower').toggle(function() { jQuery(this).next().slideDown("fast"); },
-                        function() { jQuery(this).next().slideUp("fast"); });
+    jQuery('.shower').toggle(function() { jQuery(this).nextAll('.hidable').first().slideDown("fast"); },
+                        function() { jQuery(this).nextAll('.hidable').first().slideUp("fast"); });
 
-    jQuery('.hider' ).toggle(function() { jQuery(this).next().slideUp("fast"); },
-                        function() { jQuery(this).next().slideDown("fast"); });
+    jQuery('.hider' ).toggle(function() { jQuery(this).nextAll('.hidable').first().slideUp("fast"); },
+                        function() { jQuery(this).nextAll('.hidable').first().slideDown("fast"); });
 
     // hide what should be hiden
     jQuery('.expanding .shower + .hidable').hide();
