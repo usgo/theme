@@ -118,7 +118,7 @@ eidogoConfig = {
     markCurrent: true,
     markVariations: false,
     markNext: false,
-    problemMode: false,
+    problemMode: true,
     enableShortcuts: true
 };
 </script>
