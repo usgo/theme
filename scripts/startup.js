@@ -10,7 +10,7 @@ jQuery(document).ready(function() {
             if ($lnk.attr('href') != 'http://invalid') {
                 jQuery(this).append($lnk);
                 $lnk.empty();
-                $lnk.append('-&nbsp;Go');
+                $lnk.append('<img src="/theme/images/forward.png" alt="-&nbsp;Go" />');
                 $lnk.addClass('openerGoer');
                 $lnk.click(function(event) {
                     event.stopPropagation();

@@ -14,11 +14,17 @@
 
 .expand a.openerGoer {
     display: inline;
+    padding-left: 2px;
+}
+
+.expand a.openerGoer img {
+    border: none;
+    vertical-align: middle;
 }
 
 /* preload these images, in newer browsers */
 body:after {
-    content: url(../images/add.png) url(../images/subtract.png);
+    content: url(../images/add.png) url(../images/subtract.png) url(../images/forward.png);
     display: none;
 }
 
