@@ -129,6 +129,22 @@ eidogoConfig = {
 <?php print l("Downloadable game record", $sgf_url); ?>
 <?php print render($content); ?>
 <p>For problems, questions, or comments (<strong>even if</strong> they're about this web page or go in general), email the <a href="mailto:potw@usgo.org">Problem of the Week editor</a></p>
+<?php
+if ($is_admin || $status != 1):
+    $sgf_uri = $field_sgf[0]['uri'];
+    $auto_base = "/weekly_sgf_preview/" . array_pop(explode("/", $sgf_uri));
+    $png_uri = $auto_base . ".png";
+    $auto_to_play = @file_get_contents("http://" . $_SERVER['SERVER_NAME'] . $auto_base . '.toplay');
+?>
+<h2>This section is only visible to administrators:</h2>
+<h3>Automatically generated preview image:</h3>
+<img class = "graphic" src="<?php print $png_uri ?>" alt="auto generated preview image" />
+<p>Note: if no picture is visible above, check <a href="<?php print $png_uri ?>">the automatic preview image</a> sometimes a useful error will
+be shown.</p>
+<p>Automatically generated "to play": <?php print $auto_to_play ?></p>
+<p>Note: if no automatic to play is visible above, look in the <a href="<?php print "$auto_base.toplay" ?>">automatic to play file</a>, sometimes a useful error will be shown.
+<p>IMPORTANT: inform <a href="mailto:joshua.simmons@usgo.org">Joshua Simmons</a> if there are any problems with these automatically generated files.  Send the SGF file that doesn't work, so I can debug it!</p>
+<?php endif; ?>
   </div>
 
   <?php print render($content['links']); ?>
