@@ -104,6 +104,7 @@
       hide($content['field_ready']);
       $sgf_url = url(file_create_url($field_sgf[0]['uri']))
 ?>
+<?php print render($content); ?>
 <script type="text/javascript">
 eidogoConfig = {
     theme: "standard", // "standard" or "compact"
@@ -127,7 +128,6 @@ eidogoConfig = {
 </noscript>
 <div class="eidogo-player-auto" sgf="<?php print $sgf_url; ?>"> </div>
 <?php print l("Downloadable game record", $sgf_url); ?>
-<?php print render($content); ?>
 <p>For problems, questions, or comments (<strong>even if</strong> they're about this web page or go in general), email the <a href="mailto:potw@usgo.org">Problem of the Week editor</a></p>
 <?php
 if ($is_admin || $status != 1):
