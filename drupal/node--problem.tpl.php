@@ -80,7 +80,8 @@
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-  <?php print $user_picture; ?>
+  <?php if (!$teaser):
+        print $user_picture; ?>
 
   <?php print render($title_prefix); ?>
   <?php if (!$page): ?>
@@ -131,7 +132,8 @@ eidogoConfig = {
 <p>For problems, questions, or comments (<strong>even if</strong> they're about this web page or go in general), email the <a href="mailto:potw@usgo.org">Problem of the Week editor</a></p>
   </div>
 
-  <?php print render($content['links']); ?>
+  <?php endif;
+        print render($content['links']); ?>
 
   <?php print render($content['comments']); ?>
 
