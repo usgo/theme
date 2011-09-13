@@ -109,6 +109,7 @@
 eidogoConfig = {
     theme: "standard", // "standard" or "compact"
     mode: "view", // "play" or "view"
+    restrictViewMoveSearch: true,
     showComments: true,
     showPlayerInfo: false,
     showGameInfo: false,
@@ -118,7 +119,7 @@ eidogoConfig = {
     markCurrent: true,
     markVariations: false,
     markNext: false,
-    problemMode: true,
+    problemMode: false,
     enableShortcuts: true
 };
 </script>
