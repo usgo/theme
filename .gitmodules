@@ -1,0 +1,3 @@
+[submodule "eidogo"]
+	path = eidogo
+	url = git@github.com:kadoban/eidogo.git

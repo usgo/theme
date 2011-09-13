@@ -122,7 +122,7 @@ eidogoConfig = {
     enableShortcuts: true
 };
 </script>
-<script type="text/javascript" src="http://eidogo.com/player/js/all.compressed.js"></script>
+<script type="text/javascript" src="/theme/eidogo/player/js/all.compressed.js"></script>
 <noscript>
 <p>Error:  the Eidogo go player requires a JavaScript-enabled browser.  Most likely, to see the go board here, you only need to turn on JavaScript from the Options tab on your browser's Tool menu.</p>
 </noscript>
