@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * Implements hook_filter_info().
+ *
+ */
+function header_adjust_filter_filter_info() {
+    $filters['header_adjust_filter'] = array(
+            'title' => t('HTML Header Adjust Filter'),
+            'description' => t('Implements a filter that changes HTML header 1 down to header 2 and on, if header 1 is used'),
+            'process callback'  => '_header_adjust_filter_process',
+            'tips callback' => '_header_adjust_filter_tips',
+            );
+    return $filters;
+}
+
+/**
+ * Filter tips callback
+ *
+ */
+function _header_adjust_filter_tips($filter, $format, $long = FALSE) {
+    $ret = t('Implements a filter that changes HTML headers down');
+    return $ret;
+}
+
+function _header_adjust_filter_process($text, $filter) {
+    if (strpos($text, "<h1>") !== FALSE) {
+        $patterns = array('#<h5>#','#</h5>#','#<h4>#','#</h4>#','#<h3>#','#</h3>#','#<h2>#','#</h2>#','#<h1>#','#</h1>#');
+        $replaces = array('<h6>','</h6>','<h5>','</h5>','<h4>','</h4>','<h3>','</h3>','<h2>','</h2>');
+        return preg_replace($patterns, $replaces, $text);
+    }
+    return $text;
+}
+
