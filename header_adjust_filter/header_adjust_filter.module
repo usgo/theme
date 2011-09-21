@@ -19,7 +19,7 @@ function header_adjust_filter_filter_info() {
  *
  */
 function _header_adjust_filter_tips($filter, $format, $long = FALSE) {
-    $ret = t('Headers are adjusted down one level such that <h1>s are not used in content');
+    $ret = t('Headers are adjusted down one level such that &lt;h1&gt;s are not used in content');
     return $ret;
 }
 
