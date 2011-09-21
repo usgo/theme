@@ -1,3 +1,0 @@
-name = Header Adjustment filter
-description = Implements a filter that changes header 1 down to header 2 and on, if header 1 is used
-core = 7.x
