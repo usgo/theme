@@ -23,36 +23,11 @@ function _header_adjust_filter_tips($filter, $format, $long = FALSE) {
     return $ret;
 }
 
-
-function _header_adjust_do_replacement($a) {
-    $a = pq($a);
-    $patterns = array("/^<h5/",   "/^<h4/",   "/^<h3/",   "/^<h2/",   "/^<h1/",
-                      "#</h5>$#", "#</h4>$#", "#</h3>$#", "#</h2>$#", "#</h1>$#");
-    $replaces = array("<h6",      "<h5",      "<h4",      "<h3",      "<h2",
-                      "</h6>",    "</h5>",    "</h4>",    "</h3>",    "</h2>");
-    $b = pq(preg_replace($patterns, $replaces, $a));
-    $a->replaceWith($b);
-}
-
 function _header_adjust_filter_process($text, $filter) {
-    include_once(drupal_get_path('module', 'header_adjust_filter') . '/phpQuery.php');
-    phpQuery::newDocumentXHTML($text);
-    $has_h1 = FALSE;
-    foreach(pq('h1') as $h1) {
-        $has_h1 = TRUE;
-        break;
-    }
-    if ($has_h1) {
-        pq(':heading')->each(function ($a) {
-            $a = pq($a);
-            $patterns = array("/^<h5/",   "/^<h4/",   "/^<h3/",   "/^<h2/",   "/^<h1/",
-                              "#</h5>$#", "#</h4>$#", "#</h3>$#", "#</h2>$#", "#</h1>$#");
-            $replaces = array("<h6",      "<h5",      "<h4",      "<h3",      "<h2",
-                              "</h6>",    "</h5>",    "</h4>",    "</h3>",    "</h2>");
-            $b = pq(preg_replace($patterns, $replaces, $a));
-            $a->replaceWith($b);
-        });
-        return (string) pq('');
+    if (strpos($text, "<h1>") !== FALSE) {
+        $patterns = array('#<h5([^>]*)>#','#</h5>#','#<h4([^>]*)>#','#</h4>#','#<h3([^>]*)>#','#</h3>#','#<h2([^>]*)>#','#</h2>#','#<h1([^>]*)>#','#</h1>#');
+        $replaces = array('<h6$1>','</h6>','<h5$1>','</h5>','<h4$1>','</h4>','<h3$1>','</h3>','<h2$1>','</h2>');
+        return preg_replace($patterns, $replaces, $text);
     }
     return $text;
 }
