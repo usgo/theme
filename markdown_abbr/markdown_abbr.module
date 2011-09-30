@@ -4,6 +4,7 @@ global $markdown_abbr_abbrs;
 $markdown_abbr_abbrs = <<<ENDOFABBR
 *[AGA]: American Go Association
 *[AGF]: American Go Foundation
+*[POTW]: Problem of the Week
 ENDOFABBR;
 /**
  * Implements hook_filter_info().
