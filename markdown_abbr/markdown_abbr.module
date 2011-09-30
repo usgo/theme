@@ -34,6 +34,6 @@ function _markdown_abbr_tips($filter, $format, $long = FALSE) {
 
 function _markdown_abbr_process($text, $filter) {
     global $markdown_abbr_abbrs;
-    return $markdown_abbr_abbrs . "\n" . $text;
+    return $markdown_abbr_abbrs . "\n\n\n" . $text;
 }
 
