@@ -5,6 +5,9 @@ $markdown_abbr_abbrs = <<<ENDOFABBR
 *[AGA]: American Go Association
 *[AGF]: American Go Foundation
 *[POTW]: Problem of the Week
+*[KGS]: KGS Go Server
+*[IGS]: Internet Go Server
+*[IGF]: International Go Federation
 ENDOFABBR;
 /**
  * Implements hook_filter_info().
