@@ -7,17 +7,13 @@ jQuery(document).ready(function() {
         jQuery('.mainnav .opener').has('a').each(function(index) {
             $lnk = jQuery('a', this);
             jQuery(this).append($lnk.html());
-            if ($lnk.attr('href') != 'http://invalid') {
-                jQuery(this).append($lnk);
-                $lnk.empty();
-                $lnk.append('<img src="/theme/images/forward.png" alt="-&nbsp;Go" />');
-                $lnk.addClass('openerGoer');
-                $lnk.click(function(event) {
-                    event.stopPropagation();
-                });
-            } else {
-                $lnk.remove();
-            }
+            jQuery(this).append($lnk);
+            $lnk.empty();
+            $lnk.append('<img src="/theme/images/forward.png" alt="-&nbsp;Go" />');
+            $lnk.addClass('openerGoer');
+            $lnk.click(function(event) {
+                event.stopPropagation();
+            });
         });
     }
     /* backups for browsers that don't support those css3 selectors yet */

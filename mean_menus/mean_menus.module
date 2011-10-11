@@ -502,5 +502,8 @@ function theme_mean_menus_menu_item_link($variables) {
   if (empty($variables['element']['#localized_options'])) {
     $variables['element']['#localized_options'] = array();
   }
+  if ($variables['element']['#href'] == "http://invalid") {
+    return $variables['element']['#title'];
+  }
   return l($variables['element']['#title'], $variables['element']['#href'], $variables['element']['#localized_options']);
 }
