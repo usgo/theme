@@ -17,8 +17,8 @@
 .flyout .opener {
     text-decoration: none;
     line-height: 24px;
-    padding: 4px 10px;
-    padding-right: 19px;
+    padding: 4px 10px !important;
+    padding-right: 19px !important;
     display: block;
     color: black;
     background: #f2f2c2;
@@ -36,10 +36,19 @@
     background-color: #c05600;
 }
 
+.flyout .opener:hover a,
+.flyout li:hover > .opener a {
+    background: transparent;
+}
+
+.flyout .opener a {
+    padding: 0 !important;
+}
+
 .flyout,
 .flyout ul {
     margin: 0;
-    padding: 0px 1px;
+    padding: 0px 1px !important;
     list-style-type: none;
 }
 
@@ -53,7 +62,7 @@
 
 .flyout li li,
 .flyout li li li {
-    font-size: 100%;
+    font-size: 100% !important;
 }
 
 .flyout li:hover > ul {
