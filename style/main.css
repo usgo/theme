@@ -514,3 +514,26 @@ div.potwproblem .potwtoplay {
 ul.pager li {
     margin: 0;
 }
+
+table.standingstable {
+}
+
+.standingstable td.expired {
+    text-align: center;
+    background-color: #ffbcbc;
+}
+
+.standingstable td.current {
+    text-align: center;
+    background-color: #baffca;
+}
+
+.standingstable td.name {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    text-align: left;
+}
+
+.standingstable td.number {
+    text-align: center;
+}
