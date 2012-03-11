@@ -57,7 +57,9 @@ else
             <?php include(path_to_theme() . "/includes/footer.html"); ?>
         </div>
         <div id="postfooter" class="containfloats">
-            <?php include(path_to_theme() . "/includes/ads.html"); ?>
+            <?php if (!empty($page['footer_ads'])) {
+                print "<div id=\"ads\" class=\"containfloats\">" . render($page['footer_ads']) . "</div>";
+            } ?>
             <?php print theme('links', array('links' => menu_navigation_links('menu-footer-links'), 'attributes' => array('id'=> 'sitelinks'))); ?>
         </div>
 <!--

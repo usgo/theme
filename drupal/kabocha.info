@@ -9,6 +9,7 @@ regions[help] = Help
 regions[highlighted] = Highlighted
 regions[page_top] = Page top
 regions[page_bottom] = Page bottom
+regions[footer_ads] = Footer Ads
 
 features[] = main_menu
 features[] = secondary_menu
