@@ -537,3 +537,7 @@ table.standingstable {
 .standingstable td.number {
     text-align: center;
 }
+
+#ads {
+    width: 300px;
+}

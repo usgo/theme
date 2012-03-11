@@ -22,8 +22,8 @@ function visaad_block_info() {
 function visaad_block_view($delta = 0) {
   $block['subject'] = 'AGA Capital One Visa';
   $block['content'] = <<<EOC
-<img src="/files/aga_visa_card.jpg" alt="AGA Capital One Visa card" class="graphic" width="145px" height="92px" />
-<p>Get the <abbr title="American Go Association">AGA</abbr> Visa card from Capital One and support go every time you make a purchase. No annual fee!</p>
+<a href="http://www.cardlabconnect.com/AffinityPortal/visitorAction.do?affinityName=AGA"><img src="/files/aga_visa_card.png" alt="AGA Capital One Visa card" class="graphic" width="145px" height="92px" /></a>
+<p>Get the <a href="http://www.cardlabconnect.com/AffinityPortal/visitorAction.do?affinityName=AGA"><abbr title="American Go Association">AGA</abbr> Visa card</a> from Capital One and support go every time you make a purchase. No annual fee!</p>
 EOC;
   return $block;
 }
