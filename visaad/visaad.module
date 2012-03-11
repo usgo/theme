@@ -1,0 +1,29 @@
+<?php
+/**
+ * @file
+ * This is a simple module that prints out our visa advert
+ */
+
+/**
+ * Implements hook_block_info().
+ *
+ * This hook declares what blocks are provided by the module.
+ */
+function visaad_block_info() {
+  $blocks[0] = array(
+    'info' => t('Visa Advert'),
+  );
+  return $blocks;
+}
+
+/**
+ * Implementation of hook_block().
+ */
+function visaad_block_view($delta = 0) {
+  $block['subject'] = 'AGA Capital One Visa';
+  $block['content'] = <<<EOC
+<img src="/files/aga_visa_card.jpg" alt="AGA Capital One Visa card" class="graphic" width="145px" height="92px" />
+<p>Get the <abbr title="American Go Association">AGA</abbr> Visa card from Capital One and support go every time you make a purchase. No annual fee!</p>
+EOC;
+  return $block;
+}
