@@ -1,7 +1,7 @@
 from BeautifulSoup import BeautifulSoup as BS
 import urllib
 
-url = "http://www.usgo.emptypath.com/user/"
+url = "http://www.usgo.org/user/"
 write_dir = '/var/www/usgo.org/theme/includes'
 page = urllib.urlopen(url).read()
 
