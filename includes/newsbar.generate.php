@@ -11,12 +11,15 @@ if (have_posts()) :
 <?php while (have_posts()) : the_post(); ?>
 <li><a href="<?php the_permalink(); ?>"><?php the_title('<span>', '</span>');
 if (function_exists('the_advanced_excerpt')) {
-    the_advanced_excerpt('length=25&use_words=1&no_custom=1&ellipsis=%26hellip;&allowed_tags=strong,em');
+    $excerpt = the_advanced_excerpt('length=25&use_words=1&no_custom=1&ellipsis=%26hellip;&allowed_tags=strong,em', true);
 }
 else
 {
-    the_excerpt(); 
-} ?>
+    $excerpt = get_the_excerpt();
+}
+$tags_to_remove = array("<p>", "</p>");
+print str_replace($tags_to_remove, "", $excerpt);
+?>
 </a></li>
 <?php endwhile; ?>
     <li><a href="/news/"><span>More News&hellip;</span></a></li>
