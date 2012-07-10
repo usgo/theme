@@ -19,6 +19,11 @@
 	    <?php wp_get_archives('type=monthly'); ?>
 	    </ul>
     </li>
+</ul>
+<div class="mainnav" id="ejnavarchive">
+    <a href="/american-go-e-journal-archive">Older E-Journals</a>
+</div>
+<ul class="mainnav">
     <li id="meta"><?php _e('Meta:'); ?>
 	    <ul>
 		    <?php wp_register(); ?>

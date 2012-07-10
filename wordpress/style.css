@@ -86,3 +86,8 @@ Icons from the Iconic and Sanscons sets, available at http://somerandomdude.com/
 #extracol .mainnav ul {
     padding-left: .5em;
 }
+
+#extracol #ejnavarchive.mainnav {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
