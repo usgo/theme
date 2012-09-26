@@ -107,20 +107,19 @@
 <?php print render($content); ?>
 <script type="text/javascript">
 eidogoConfig = {
-    theme: "standard", // "standard" or "compact"
-    mode: "play", // "play" or "view"
-    restrictViewMoveSearch: true,
-    showComments: true,
-    showPlayerInfo: false,
-    showGameInfo: false,
-    showTools: false,
-    showOptions: false,
-    showNavTree: true,
-    markCurrent: true,
-    markVariations: false,
-    markNext: false,
-    problemMode: false,
-    enableShortcuts: true
+    theme: "compact", // "standard" or "compact"(stack panes vertically)
+    mode: "play",    // "play" or "view"
+    problemMode: false,     // partial board covering just the initial stones
+    showNavTree: true,   // Only way for theme="compact" to show variations?
+    showComments: true,   // Scrollable comment pane
+    showPlayerInfo: true,   // Static line showing player names
+    showGameInfo: false,  // Big pane for misc tag data
+    showTools: true,   // Markups menu.  Really only makes sense for mode=play!
+    showOptions: true,   // "Download SGF" (dumps raw SGF to browser!?)
+    markCurrent: true,   // Tiny square on current(last) move
+    markVariations: false,  // Put numbers on 1st move of all variations
+    markNext: false,  // Put mark on next move
+    enableShortcuts: true    // Don't know what this does
 };
 </script>
 <script type="text/javascript" src="/theme/eidogo/player/js/all.compressed.js"></script>
