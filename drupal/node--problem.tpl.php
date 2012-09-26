@@ -107,7 +107,7 @@
 <?php print render($content); ?>
 <script type="text/javascript">
 eidogoConfig = {
-    theme: "compact", // "standard" or "compact"(stack panes vertically)
+    theme: "standard", // "standard" or "compact"(stack panes vertically)
     mode: "play",    // "play" or "view"
     problemMode: false,     // partial board covering just the initial stones
     showNavTree: true,   // Only way for theme="compact" to show variations?
