@@ -108,14 +108,14 @@
 <script type="text/javascript">
 eidogoConfig = {
     theme: "standard", // "standard" or "compact"
-    mode: "view", // "play" or "view"
+    mode: "play", // "play" or "view"
     restrictViewMoveSearch: true,
     showComments: true,
     showPlayerInfo: false,
     showGameInfo: false,
     showTools: false,
     showOptions: false,
-    showNavTree: false,
+    showNavTree: true,
     markCurrent: true,
     markVariations: false,
     markNext: false,
