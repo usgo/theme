@@ -1,1 +1,3 @@
 /includes/*.cached.html
+/includes/usgo_drupal_scrape_conf.py
+/includes/*.pyc
