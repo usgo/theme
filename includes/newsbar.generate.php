@@ -1,4 +1,9 @@
-<?php require('/var/www/usgo.org/news/wp-blog-header.php');
+<?php
+// Provides a dynamic way to get the /news directory for wordpress.
+$newsbar_generate_news_dir = dirname(__DIR__, 2) . "/news";
+
+require($newsbar_generate_news_dir . '/wp-blog-header.php');
+
 query_posts('cat=712,-1182,-542&showposts=5');
 if (!have_posts())
 {
