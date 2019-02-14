@@ -20,6 +20,10 @@ import sys
 #   - The environment which this script is running.
 # - AGA_WRITE_DIR
 #   - The directory to which the cached files will be written.
+# Cron Usage for usgo.org:
+#   Edit the www-data user's cron file with `$ sudo crontab -u www-data -e`.
+#   Then add the entry:
+#    10,25,40,55 * * * * /usr/bin/python [usgo_theme_includes_directory]/scrape_regions.py
 
 # Check that the config file exists.
 usgo_drupal_scrape_config_file = Path("usgo_drupal_scrape_conf.py")
