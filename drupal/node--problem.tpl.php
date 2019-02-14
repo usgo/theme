@@ -131,10 +131,21 @@ eidogoConfig = {
 <p>For problems, questions, or comments (<strong>even if</strong> they're about this web page or go in general), email the <a href="mailto:potw@usgo.org">Problem of the Week editor</a></p>
 <?php
 if ($is_admin || $status != 1):
+
+    // Set the sgf_uri in this way to avoid error
+    // with variables being passed by reference.
     $sgf_uri = $field_sgf[0]['uri'];
-    $auto_base = "/weekly_sgf_preview/" . array_pop(explode("/", $sgf_uri));
+    $sgf_uri = explode("/", $sgf_uri);
+    $sgf_uri = array_pop($sgf_uri);
+
+    // Base url for the sgf.
+    $auto_base = "/weekly_sgf_preview/" . $sgf_uri;
     $png_uri = $auto_base . ".png";
-    $auto_to_play = @file_get_contents("http://" . $_SERVER['SERVER_NAME'] . $auto_base . '.toplay');
+
+    // Set the proto for either https or http.
+    $proto = isset($_SERVER['HTTPS']) ? "https://" : "http://";
+
+    $auto_to_play = @file_get_contents($proto . $_SERVER['SERVER_NAME'] . $auto_base . '.toplay');
 ?>
 <h2>This section is only visible to administrators:</h2>
 <h3>Automatically generated preview image:</h3>
