@@ -2,7 +2,9 @@
 
 function kabocha_preprocess_html(&$variables) {
   if ($variables['is_front']) {
-    $wp_head = file_get_contents('/var/www/usgo.org/theme/includes/drupal.wphead.html');
+    // Dynamically get the themes include directory.
+    $theme_includes_directory = dirname(__DIR__, 1) . "/includes";
+    $wp_head = file_get_contents($theme_includes_directory . "/drupal.wphead.html");
     drupal_add_html_head(array('#type' => 'markup', '#markup' => $wp_head), 'wp-head');
   }
 }
