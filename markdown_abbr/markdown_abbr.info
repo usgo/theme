@@ -1,3 +1,0 @@
-name = Markdown predefined acronyms
-description = Implements a filter that adds the acronyms useful for the whole site
-core = 7.x
