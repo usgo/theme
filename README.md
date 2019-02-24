@@ -3,7 +3,7 @@ The AGA's usgo.org website theme and scripts for syncing usgo's Drupal and WordP
 
 # Theme Directories
 - drupal: theme directory for the www.usgo.org.
-- wordpress: theme directory for the current wwww.usgo.org/news.
+- wordpress: theme directory for the current www.usgo.org/news.
 
 # Requirements
 - PHP
