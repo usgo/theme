@@ -15,8 +15,8 @@ The AGA's usgo.org website theme and scripts for syncing usgo's Drupal and WordP
 - urllib
 
 # Drupal / and WP /news theme installation.
-- Drupal: Create a symbolic link with `$ ln -s [usgo_drupal_root]/sites/all/themes/kabocha to [usgo_theme_root]`.
-- WP News: Create a symbolic link with `$ ln -s  [usgo_wp_news_root]/wp-content/themes to [usgo_theme_root]/wordpress`.
+- Drupal: Create a symbolic link with `$ ln -s [usgo_drupal_root]/sites/all/themes/kabocha [usgo_theme_root]`.
+- WP News: Create a symbolic link with `$ ln -s  [usgo_wp_news_root]/wp-content/themes [usgo_theme_root]/wordpress`.
 
 # Configuring scrape_region.py
 1) Copy within [usgo_theme_root]/includes/usgo_drupal_scrape_conf.default.py to [usgo_theme_root]/includes/usgo_drupal_scrape_conf.py.
@@ -33,7 +33,7 @@ The AGA's usgo.org website theme and scripts for syncing usgo's Drupal and WordP
 
 ### Scrape regions i.e., navwrap, navcol, ...
 ```
-10,25,40,55 * * * * cd /var/www/dev.usgo.org/theme/includes && /usr/bin/python ./scrape_regions.py
+10,25,40,55 * * * * cd [usgo_theme_root]/includes && /usr/bin/python ./scrape_regions.py
 ```
 
 ### Generate a Wordpress header for Drupal and create drupal.wphead.cached.html
