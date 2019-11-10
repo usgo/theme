@@ -1,6 +1,6 @@
 <?php
 // Provides a dynamic way to get the /news directory for wordpress.
-$newsbar_generate_news_dir = dirname(__DIR__, 2) . "/news";
+$newsbar_generate_news_dir = dirname(__DIR__, 2) . "/usgo_org_current/news-app";
 
 require($newsbar_generate_news_dir . '/wp-blog-header.php');
 

@@ -6,4 +6,11 @@ if ( function_exists('register_sidebar') )
 		'before_title' => '',
 		'after_title' => '',
 	));
+
+function kobacha_mime_types($mime_types){
+    $mime_types['sgf'] = 'application/x-go-sgf'; // Add  sgf extension
+    return $mime_types;
+}
+
+add_filter( 'upload_mimes', 'kobacha_mime_types', 1, 1 );
 ?>

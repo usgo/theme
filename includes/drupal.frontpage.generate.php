@@ -1,6 +1,6 @@
 <?php
 // Get the location of the /news directory.
-$drupal_frontpage_news_dir = dirname(__DIR__, 2) . "/news";
+$drupal_frontpage_news_dir = dirname(__DIR__, 2) . "/usgo_org_current/news-app";
 
 require($drupal_frontpage_news_dir . '/wp-blog-header.php');
 
